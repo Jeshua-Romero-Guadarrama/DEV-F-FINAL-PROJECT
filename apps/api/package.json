@@ -1,7 +1,7 @@
 {
   "name": "pawmatch-api",
   "version": "1.0.0",
-  "description": "API para la plataforma PawMatch orientada a adopción y tienda solidaria",
+  "description": "API para la plataforma PawMatch orientada a adopciï¿½n y tienda solidaria",
   "type": "module",
   "main": "src/server.js",
   "scripts": {
@@ -28,7 +28,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.0",
     "morgan": "^1.10.1",
-    "nodemailer": "^7.0.6"
+    "nodemailer": "^7.0.6",
+    "pawmatch-platform": "file:../.."
   },
   "devDependencies": {
     "eslint": "^9.36.0",
