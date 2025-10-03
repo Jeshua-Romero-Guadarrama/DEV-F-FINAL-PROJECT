@@ -1,10 +1,23 @@
+import { Route, Routes } from "react-router-dom"
 import MainLayout from "../components/layout/MainLayout.jsx"
 import HomePage from "../modules/home/HomePage.jsx"
+import StorePage from "../modules/store/StorePage.jsx"
+import AdminDashboardPage from "../pages/admin/AdminDashboardPage.jsx"
+import CareGuidePage from "../pages/care/CareGuidePage.jsx"
+import LoginPage from "../pages/auth/LoginPage.jsx"
+import RegisterPage from "../pages/auth/RegisterPage.jsx"
 
 const App = () => {
   return (
     <MainLayout>
-      <HomePage />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/store" element={<StorePage />} />
+        <Route path="/care-guide" element={<CareGuidePage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/admin" element={<AdminDashboardPage />} />
+      </Routes>
     </MainLayout>
   )
 }

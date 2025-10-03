@@ -3,15 +3,13 @@ import { Lead } from "./lead.model.js"
 
 export const createLead = async (req, res, next) => {
   try {
+    // Se evita registrar multiples veces el mismo correo en un periodo corto
     const existing = await Lead.findOne({ email: req.body.email }).sort({ createdAt: -1 })
     if (existing && existing.createdAt && Date.now() - existing.createdAt.getTime() < 1000 * 60 * 60 * 24) {
       throw new HttpError(409, "Ya registramos tus datos recientemente")
     }
 
-    const lead = await Lead.create({
-      ...req.body,
-      aceptoTerminos: req.body.aceptoTerminos === true || req.body.aceptoTerminos === "true",
-    })
+    const lead = await Lead.create(req.body)
 
     res.status(201).json(lead)
   } catch (error) {

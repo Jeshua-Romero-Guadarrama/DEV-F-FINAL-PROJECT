@@ -9,7 +9,12 @@ export const createLeadValidations = [
   body("telefono").trim().notEmpty().withMessage("El telefono es obligatorio"),
   body("perros").optional().isInt({ min: 0 }).withMessage("Numero de perros invalido"),
   body("gatos").optional().isInt({ min: 0 }).withMessage("Numero de gatos invalido"),
-  body("aceptoTerminos").equals("true").withMessage("Debes aceptar los terminos"),
+  body("aceptoTerminos")
+    .isBoolean()
+    .withMessage("Debe ser booleano")
+    .toBoolean()
+    .custom((value) => value === true)
+    .withMessage("Debes aceptar los terminos"),
 ]
 
 export const listLeadsValidations = [

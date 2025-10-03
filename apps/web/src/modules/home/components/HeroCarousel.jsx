@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
 import { heroSlides } from "../data/heroSlides.js"
 
@@ -8,13 +8,18 @@ const HeroCarousel = () => {
   const [current, setCurrent] = useState(0)
   const slideCount = heroSlides.length
 
-  const next = () => setCurrent((prev) => (prev + 1) % slideCount)
-  const previous = () => setCurrent((prev) => (prev - 1 + slideCount) % slideCount)
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % slideCount)
+  }, [slideCount])
+
+  const previous = useCallback(() => {
+    setCurrent((prev) => (prev - 1 + slideCount) % slideCount)
+  }, [slideCount])
 
   useEffect(() => {
     const timer = setInterval(next, SLIDE_INTERVAL)
     return () => clearInterval(timer)
-  }, [])
+  }, [next])
 
   const currentSlide = useMemo(() => heroSlides[current], [current])
 
