@@ -30,7 +30,9 @@
     "mongoose": "^8.19.0",
     "morgan": "^1.10.1",
     "nodemailer": "^7.0.6",
-    "pawmatch-platform": "file:../.."
+    "pawmatch-platform": "file:../..",
+    "swagger-ui-express": "^5.0.0",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "eslint": "^9.36.0",
