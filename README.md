@@ -190,4 +190,4 @@ pm run lint:web y
 pm run lint:api antes de subir cambios.
 - Puedes añadir pruebas adicionales en apps/api/tests y apps/web/src/tests para nuevos módulos.
 
-Con esta estructura tienes la experiencia para adoptantes y el panel administrativo claramente separados, con pruebas básicas listas para expandirse y documentación alineada al nuevo flujo.
+La estructura brinda una experiencia única para los adoptantes, así como un panel administrativo claramente separados, con pruebas básicas listas para expandirse y documentación alineada al nuevo flujo.
