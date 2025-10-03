@@ -20,8 +20,8 @@ const LoginPage = () => {
     setError(null)
     try {
       if (authService.isMasterCredentials(form.email.trim(), form.password)) {
-        const response = await authService.login(form)
-        login(response)
+        const session = authService.masterSession()
+        login(session)
         navigate("/admin")
         return
       }
@@ -37,7 +37,7 @@ const LoginPage = () => {
   }
 
   return (
-    <section className="mx-auto mt-10 max-w-md rounded-3xl bg-white p-10 shadow-xl">
+    <section className="mx-auto mt-10 max-w-md rounded-3xl bg-white p-10 shadow-xl" lang="es">
       <h1 className="font-baloo text-3xl text-peach">Iniciar sesión</h1>
       <p className="mt-2 text-sm text-charcoal/80">
         Ingresa con tus credenciales registradas para continuar con tus adopciones y compras.
@@ -82,4 +82,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage
+export default LoginPage
