@@ -41,12 +41,13 @@ apps/
       app/               # Definicion de rutas con React Router
       components/layout/ # Layout global, navbar y footer
       modules/home/      # Componentes, datos y pagina de inicio
-      modules/store/     # Hero de tienda, categorias, productos y carrito
+      modules/adoptions/ # Listado, detalle y contenidos educativos para adopcion
+      modules/store/     # Hero, combos, beneficios, testimonios y carrito
       pages/
         auth/            # Pantallas de registro e inicio de sesion
         care/            # Pagina guia de cuidados con formulario
         admin/           # Panel administrativo de pedidos y leads
-      services/          # Clientes HTTP reutilizables (API, auth, products, orders, leads)
+      services/          # Clientes HTTP reutilizables (API, auth, pets, products, orders, leads)
       context/           # Providers de autenticacion y carrito compartido
     public/
     package.json
@@ -116,12 +117,14 @@ El middleware de autenticacion reside en `apps/api/src/middlewares/auth.middlewa
 La interfaz React organiza sus vistas principales mediante React Router:
 
 - `HomePage` mantiene el carrusel, secciones informativas y llamado a donativos.
-- `StorePage` replica el diseño mostrado (hero, categorias circulares, banner solidario, grid de productos y paginacion) e integra carrito contextual. Para agregar productos es obligatorio iniciar sesion; al finalizar compra se genera un pedido en la API.
+- `AdoptionsPage` ofrece filtros, tarjetas, paginacion y contenidos de apoyo (proceso, historias y voluntariado), enlazando al perfil detallado (`/adoptions/:id`).
+- `PetDetailPage` muestra galeria, datos clave y narrativa de cada mascota con un CTA de adopcion.
+- `StorePage` replica el diseño de la tienda con combos destacados, beneficios, testimonios y carrito conectado a órdenes.
 - `CareGuidePage` mantiene el formulario promocional y envia registros a la API de leads.
 - `RegisterPage` y `LoginPage` administran autenticacion y almacenan el token en el contexto compartido.
 - `AdminDashboardPage` muestra pedidos y leads filtrables para el rol administrativo.
 
-`context/` aloja `AuthProvider` y `CartProvider`, reutilizados por toda la SPA. `services/` centraliza el acceso HTTP (`apiClient`, `authService`, `productsService`, `ordersService`, `leadsService`). Tailwind CSS define tipografias y colores corporativos.
+`context/` aloja `AuthProvider` y `CartProvider`, reutilizados por toda la SPA. `services/` centraliza el acceso HTTP (`apiClient`, `authService`, `petsService`, `productsService`, `ordersService`, `leadsService`). Tailwind CSS define tipografias y colores corporativos.
 
 ## Arquitectura aplicada
 PawMatch adopta una **arquitectura monorepo modular**:

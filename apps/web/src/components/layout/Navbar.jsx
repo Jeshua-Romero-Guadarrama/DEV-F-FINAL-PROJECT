@@ -25,7 +25,7 @@ const Navbar = () => {
         </Link>
 
         <nav className="flex flex-wrap items-center justify-center gap-6 text-lg font-fredoka">
-          <Link className="transition hover:text-cream" to="/">
+          <Link className="transition hover:text-cream" to="/adoptions">
             Adopciones
           </Link>
           <Link className="transition hover:text-cream" to="/store">

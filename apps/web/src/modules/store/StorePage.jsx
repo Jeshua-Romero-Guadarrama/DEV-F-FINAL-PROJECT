@@ -5,6 +5,9 @@ import StoreHighlight from "./components/StoreHighlight.jsx"
 import StoreProductGrid from "./components/StoreProductGrid.jsx"
 import StorePagination from "./components/StorePagination.jsx"
 import CartSummary from "./components/CartSummary.jsx"
+import StoreBenefits from "./components/StoreBenefits.jsx"
+import StoreTestimonials from "./components/StoreTestimonials.jsx"
+import StoreComboCarousel from "./components/StoreComboCarousel.jsx"
 import { productsService } from "../../services/productsService.js"
 
 const StorePage = () => {
@@ -36,6 +39,8 @@ const StorePage = () => {
       <StoreHero />
       <StoreCategories />
       <StoreHighlight />
+      <StoreComboCarousel />
+      <StoreBenefits />
 
       {authReminder && (
         <p className="rounded-2xl bg-peach/20 px-6 py-3 text-center text-sm text-peach">
@@ -53,6 +58,8 @@ const StorePage = () => {
         </div>
         <CartSummary />
       </div>
+
+      <StoreTestimonials />
     </section>
   )
 }

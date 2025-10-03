@@ -3,6 +3,9 @@ import AdoptionHero from "./components/AdoptionHero.jsx"
 import FilterPanel from "./components/FilterPanel.jsx"
 import Pagination from "./components/Pagination.jsx"
 import PetGrid from "./components/PetGrid.jsx"
+import AdoptionProcess from "./components/AdoptionProcess.jsx"
+import AdoptionSuccessStories from "./components/AdoptionSuccessStories.jsx"
+import VolunteerCTA from "./components/VolunteerCTA.jsx"
 import { petsService } from "../../services/petsService.js"
 
 const mapMascota = (mascota) => ({
@@ -61,6 +64,9 @@ const AdoptionsPage = () => {
           <Pagination />
         </div>
       </div>
+      <AdoptionProcess />
+      <AdoptionSuccessStories />
+      <VolunteerCTA />
     </section>
   )
 }
