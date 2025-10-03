@@ -1,3 +1,5 @@
+﻿import { Link } from "react-router-dom"
+
 const categories = [
   {
     label: "Todos",
@@ -35,6 +37,14 @@ const StoreCategories = ({ activeCategory, onSelect }) => {
   return (
     <section className="mt-12 text-center" aria-label="Categorías de la tienda">
       <h2 className="font-baloo text-3xl text-peach">¿Qué vas a comprar el día de hoy?</h2>
+      <div className="mt-4 flex justify-center">
+        <Link
+          to="/cart"
+          className="inline-flex items-center justify-center rounded-full bg-peach px-6 py-2 font-fredoka text-white transition hover:bg-peach/90"
+        >
+          Finalizar compra
+        </Link>
+      </div>
       <div className="mt-6 grid gap-6 sm:grid-cols-6">
         {categories.map((category) => {
           const isActive = activeCategory === category.value
@@ -44,7 +54,7 @@ const StoreCategories = ({ activeCategory, onSelect }) => {
               type="button"
               onClick={() => onSelect(category.value)}
               className={`flex flex-col items-center gap-3 rounded-3xl border-2 transition ${
-                isActive ? 'border-peach bg-white shadow-lg' : 'border-transparent bg-white/70 hover:border-peach/40'
+                isActive ? "border-peach bg-white shadow-lg" : "border-transparent bg-white/70 hover:border-peach/40"
               }`}
             >
               <div className="h-24 w-24 overflow-hidden rounded-full border-4 border-cream shadow-lg">

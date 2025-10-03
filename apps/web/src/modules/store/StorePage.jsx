@@ -9,6 +9,7 @@ import StoreBenefits from "./components/StoreBenefits.jsx"
 import StoreTestimonials from "./components/StoreTestimonials.jsx"
 import StoreComboCarousel from "./components/StoreComboCarousel.jsx"
 import { productsService } from "../../services/productsService.js"
+import { fallbackProducts } from "./data/fallbackProducts.js"
 
 const StorePage = () => {
   const [products, setProducts] = useState([])
@@ -26,10 +27,21 @@ const StorePage = () => {
         if (categoryFilter) {
           params.categoria = categoryFilter
         }
-        const response = await productsService.list(params)
-        setProducts(response)
+        let data = await productsService.list(params)
+        if (!Array.isArray(data) || data.length === 0) {
+          data = fallbackProducts
+        }
+        if (categoryFilter) {
+          data = data.filter((product) => (product.categoria ?? "") === categoryFilter)
+        }
+        setProducts(data)
       } catch (err) {
         setError(err.message)
+        let data = fallbackProducts
+        if (categoryFilter) {
+          data = data.filter((product) => (product.categoria ?? "") === categoryFilter)
+        }
+        setProducts(data)
       } finally {
         setLoading(false)
       }
@@ -39,19 +51,13 @@ const StorePage = () => {
   }, [categoryFilter])
 
   return (
-    <section className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-10">
+    <section className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-10" lang="es">
       <StoreHero />
       <StoreCategories activeCategory={categoryFilter} onSelect={setCategoryFilter} />
-      <StoreHighlight />
-      <StoreComboCarousel />
-      <StoreBenefits />
 
       {authReminder && (
-        <p className="rounded-2xl bg-peach/20 px-6 py-3 text-center text-sm text-peach">
-          Debes iniciar sesión o crear una cuenta para agregar productos al carrito.
-        </p>
+        <p className="rounded-2xl bg-peach/20 px-6 py-3 text-center text-sm text-peach">Debes iniciar sesión o crear una cuenta para agregar productos al carrito.</p>
       )}
-
       {loading && <p className="text-center text-sm text-charcoal/70">Cargando productos...</p>}
       {error && <p className="text-center text-sm text-red-500">{error}</p>}
 
@@ -63,6 +69,9 @@ const StorePage = () => {
         <CartSummary />
       </div>
 
+      <StoreHighlight />
+      <StoreComboCarousel />
+      <StoreBenefits />
       <StoreTestimonials />
     </section>
   )
