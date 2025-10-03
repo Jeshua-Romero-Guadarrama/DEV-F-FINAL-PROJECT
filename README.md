@@ -19,7 +19,7 @@ La plataforma PawMatch impulsa la adopción responsable y habilita una tienda so
 ## Arquitectura general
 El repositorio organiza sus aplicaciones bajo el directorio apps/ siguiendo un monorepo modular.
 
-`	ext
+`	markdown
 apps/
   api/
     src/
