@@ -119,26 +119,18 @@ Puedes definir las credenciales maestras en variables de entorno; si no se defin
 | VITE_ADMIN_PASSWORD | Contraseña maestra (frontend) | PawMatch#2025 |
 
 ## Scripts disponibles
+
 | Script | Propósito |
 | --- | --- |
-| 
-pm run dev:api | Inicia la API en modo desarrollo con Nodemon |
-| 
-pm run start:api | Inicia la API en modo producción |
-| 
-pm run lint:api | Ejecuta ESLint sobre apps/api |
-| 
-pm run dev:web | Levanta Vite con hot reload |
-| 
-pm run build:web | Construye el frontend para distribución |
-| 
-pm run lint:web | Ejecuta ESLint sobre apps/web |
-| 
-pm run test:api | Ejecuta Vitest + Supertest en la API |
-| 
-pm run test:web | Ejecuta Vitest + Testing Library en el frontend |
-| 
-pm test | Corre pruebas de API y web en cadena |
+| pm run dev:api | Inicia la API en modo desarrollo con Nodemon |
+| pm run start:api | Inicia la API en modo producción |
+| pm run lint:api | Ejecuta ESLint sobre apps/api |
+| pm run dev:web | Levanta Vite con hot reload |
+| pm run build:web | Construye el frontend para distribución |
+| pm run lint:web | Ejecuta ESLint sobre apps/web |
+| pm run test:api | Ejecuta Vitest + Supertest en la API |
+| pm run test:web | Ejecuta Vitest + Testing Library en el frontend |
+| pm test | Corre pruebas de API y web en cadena |
 
 ## Pruebas
 - **Backend** (apps/api/tests/pets.routes.test.js):
