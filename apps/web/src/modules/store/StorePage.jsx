@@ -15,14 +15,18 @@ const StorePage = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [authReminder, setAuthReminder] = useState(false)
+  const [categoryFilter, setCategoryFilter] = useState("")
 
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true)
       setError(null)
       try {
-        // Consulta al backend para obtener el catalogo vigente
-        const response = await productsService.list()
+        const params = {}
+        if (categoryFilter) {
+          params.categoria = categoryFilter
+        }
+        const response = await productsService.list(params)
         setProducts(response)
       } catch (err) {
         setError(err.message)
@@ -32,12 +36,12 @@ const StorePage = () => {
     }
 
     fetchProducts()
-  }, [])
+  }, [categoryFilter])
 
   return (
     <section className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-10">
       <StoreHero />
-      <StoreCategories />
+      <StoreCategories activeCategory={categoryFilter} onSelect={setCategoryFilter} />
       <StoreHighlight />
       <StoreComboCarousel />
       <StoreBenefits />
@@ -64,4 +68,4 @@ const StorePage = () => {
   )
 }
 
-export default StorePage
+export default StorePage

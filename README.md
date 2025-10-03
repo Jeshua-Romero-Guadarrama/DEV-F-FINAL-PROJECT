@@ -156,6 +156,7 @@ npm run test:web
 `
 
 ## API PawMatch
+- Documentación interactiva: http://localhost:4000/docs
 - **Salud**: GET /health devuelve estado del servicio.
 - **Autenticación** (/api/v1/auth): registro, login y perfil autenticado. El frontend reconoce credenciales maestras definidas en las variables VITE_ADMIN_*.
 - **Mascotas** (/api/v1/pets y /api/v1/pets/seeds): listado/CRUD protegido para admins y semillas de ejemplo (Toby) cuando la colección está vacía.
