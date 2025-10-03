@@ -1,4 +1,4 @@
-import { FaPaw } from "react-icons/fa"
+ï»¿import { FaPaw } from "react-icons/fa"
 import { FiSearch, FiShoppingBag } from "react-icons/fi"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../../context/AuthContext.jsx"
@@ -31,17 +31,17 @@ const Navbar = () => {
             Adopciones
           </Link>
           <Link className="transition hover:text-cream" to="/adoptions/form">
-            Registro de adopción
+            Registro de adopciÃ³n
           </Link>
           <Link className="transition hover:text-cream" to="/store">
             Tienda
           </Link>
           <Link className="transition hover:text-cream" to="/care-guide">
-            Guía de cuidados
+            GuÃ­a de cuidados
           </Link>
           {isAdmin && (
             <Link className="transition hover:text-cream" to="/admin">
-              Administración
+              AdministraciÃ³n
             </Link>
           )}
         </nav>
@@ -81,7 +81,7 @@ const Navbar = () => {
           ) : (
             <div className="flex items-center gap-2 text-sm">
               <Link to="/login" className="rounded-full bg-white/30 px-3 py-2 text-white transition hover:bg-white/40">
-                Iniciar sesión
+                Iniciar sesiÃ³n
               </Link>
               <Link to="/register" className="rounded-full bg-sunny px-3 py-2 text-charcoal transition hover:bg-sunny/90">
                 Registrarme

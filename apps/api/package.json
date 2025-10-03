@@ -1,7 +1,7 @@
-{
+﻿{
   "name": "pawmatch-api",
   "version": "1.0.0",
-  "description": "API para la plataforma PawMatch orientada a adopci�n y tienda solidaria",
+  "description": "API para la plataforma PawMatch orientada a adopción y tienda solidaria",
   "type": "module",
   "main": "src/server.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "keywords": [
     "pawmatch",
-    "adopcion",
+    "adopción",
     "api",
     "tienda",
     "mascotas"
@@ -39,3 +39,4 @@
     "nodemon": "^3.1.10"
   }
 }
+
