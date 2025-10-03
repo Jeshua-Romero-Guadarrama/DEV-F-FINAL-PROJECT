@@ -3,19 +3,19 @@ const testimonials = [
     name: "Ana y Bruno",
     avatar: "https://images.unsplash.com/photo-1601758124027-27f25b911aa5?auto=format&fit=crop&w=160&q=80",
     message:
-      "Adoptamos a Nala y la tienda fue clave para equiparnos con todo lo necesario. ¡Nos encanta el concentrado natural!",
+      "Adoptamos a Nala y la tienda fue clave para equiparnos con todo lo necesario. Â¡Nos encanta el concentrado natural!",
   },
   {
     name: "Carlos",
     avatar: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?auto=format&fit=crop&w=160&q=80",
     message:
-      "Recibí mi pedido en 24 horas y con un mensaje personalizado. Saber que apoyo a otros peluditos me hace repetir.",
+      "RecibÃ­ mi pedido en 24 horas y con un mensaje personalizado. Saber que apoyo a otros peluditos me hace repetir.",
   },
   {
     name: "Lupita",
     avatar: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=160&q=80",
     message:
-      "Los artículos de higiene me ayudaron a rehabilitar a mi gatita rescatada. La calidad y el servicio valen la pena.",
+      "Los artÃ­culos de higiene me ayudaron a rehabilitar a mi gatita rescatada. La calidad y el servicio valen la pena.",
   },
 ]
 
@@ -35,7 +35,7 @@ const StoreTestimonials = () => {
               />
               <span className="font-fredoka text-peach">{testimonial.name}</span>
             </div>
-            <p className="text-sm leading-relaxed text-charcoal/80">“{testimonial.message}”</p>
+            <p className="text-sm leading-relaxed text-charcoal/80">Â“{testimonial.message}Â”</p>
           </article>
         ))}
       </div>
@@ -43,4 +43,4 @@ const StoreTestimonials = () => {
   )
 }
 
-export default StoreTestimonials
+export default StoreTestimonials

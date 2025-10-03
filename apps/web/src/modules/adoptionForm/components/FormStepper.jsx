@@ -34,4 +34,4 @@ const FormStepper = ({ activeStep }) => {
   )
 }
 
-export default FormStepper
+export default FormStepper

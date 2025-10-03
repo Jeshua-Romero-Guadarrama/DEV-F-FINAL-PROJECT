@@ -58,4 +58,4 @@ export const useCart = () => {
     throw new Error("useCart debe usarse dentro de CartProvider")
   }
   return ctx
-}
+}

@@ -13,4 +13,4 @@ export const ordersService = {
   getOrder(token, id) {
     return apiClient.get(`/orders/${id}`, { token })
   },
-}
+}

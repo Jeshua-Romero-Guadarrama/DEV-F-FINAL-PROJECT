@@ -3,9 +3,9 @@ const VolunteerCTA = () => {
     <section className="rounded-3xl bg-sunny/60 p-10 text-charcoal shadow-xl">
       <div className="grid gap-6 md:grid-cols-[2fr,1fr] md:items-center">
         <div>
-          <h3 className="font-baloo text-3xl text-peach">¿No puedes adoptar? ¡Suma tu talento!</h3>
+          <h3 className="font-baloo text-3xl text-peach">Â¿No puedes adoptar? Â¡Suma tu talento!</h3>
           <p className="mt-4 text-sm leading-relaxed text-charcoal/80">
-            Buscamos voluntariado para traslados, difusión y socialización de peluditos. Regístrate y recibe nuestras jornadas
+            Buscamos voluntariado para traslados, difusiÃ³n y socializaciÃ³n de peluditos. RegÃ­strate y recibe nuestras jornadas
             de entrenamiento mensual.
           </p>
           <button className="mt-6 rounded-full bg-peach px-6 py-3 font-fredoka text-white transition hover:bg-peach/90">
@@ -23,4 +23,4 @@ const VolunteerCTA = () => {
   )
 }
 
-export default VolunteerCTA
+export default VolunteerCTA

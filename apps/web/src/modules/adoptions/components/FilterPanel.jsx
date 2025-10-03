@@ -6,7 +6,7 @@ const FilterPanel = ({ filtros, onChange }) => {
       { id: "todos", label: "Todas las mascotas" },
       { id: "perro", label: "Perros" },
       { id: "gato", label: "Gatos" },
-      { id: "2a", label: "2ª oportunidad" },
+      { id: "2a", label: "2Âª oportunidad" },
     ],
     [],
   )
@@ -60,4 +60,4 @@ const FilterPanel = ({ filtros, onChange }) => {
   )
 }
 
-export default FilterPanel
+export default FilterPanel

@@ -1,4 +1,4 @@
-﻿import { FaPaw } from "react-icons/fa"
+import { FaPaw } from "react-icons/fa"
 import { FiSearch, FiShoppingBag } from "react-icons/fi"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../../context/AuthContext.jsx"

@@ -4,7 +4,7 @@ const StoreHighlight = () => {
       <div>
         <h3 className="font-baloo text-3xl leading-tight">El 20% de tu compra alimenta a mascotas sin hogar</h3>
         <p className="mt-3 text-sm text-white/90">
-          Tus compras solidarias garantizan alimento, atención médica y espacios seguros para perros y gatos rescatados.
+          Tus compras solidarias garantizan alimento, atenciÃ³n mÃ©dica y espacios seguros para perros y gatos rescatados.
         </p>
       </div>
       <img
@@ -17,4 +17,4 @@ const StoreHighlight = () => {
   )
 }
 
-export default StoreHighlight
+export default StoreHighlight

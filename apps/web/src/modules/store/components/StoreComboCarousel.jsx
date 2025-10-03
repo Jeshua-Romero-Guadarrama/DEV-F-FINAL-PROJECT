@@ -1,12 +1,12 @@
 const combos = [
   {
     title: "Kit cachorro aventurero",
-    items: "Alimento premium + arnés acolchado + juguete mordedera",
+    items: "Alimento premium + arnÃ©s acolchado + juguete mordedera",
     price: 950,
   },
   {
     title: "Pack gatuno relax",
-    items: "Fuente de agua + catnip + cama iglú",
+    items: "Fuente de agua + catnip + cama iglÃº",
     price: 1140,
   },
   {
@@ -36,4 +36,4 @@ const StoreComboCarousel = () => {
   )
 }
 
-export default StoreComboCarousel
+export default StoreComboCarousel

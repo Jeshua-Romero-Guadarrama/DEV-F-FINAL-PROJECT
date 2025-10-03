@@ -17,4 +17,4 @@ const StorePagination = () => {
   )
 }
 
-export default StorePagination
+export default StorePagination

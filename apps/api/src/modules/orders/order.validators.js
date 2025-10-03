@@ -25,4 +25,4 @@ export const orderIdValidation = [param("id").isMongoId().withMessage("Identific
 export const listOrdersValidations = [
   query("estado").optional().isIn(ORDER_STATUS).withMessage("Estado invalido"),
   query("usuario").optional().isMongoId().withMessage("Usuario invalido"),
-]
+]

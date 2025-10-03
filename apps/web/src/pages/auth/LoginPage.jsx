@@ -38,13 +38,13 @@ const LoginPage = () => {
 
   return (
     <section className="mx-auto mt-10 max-w-md rounded-3xl bg-white p-10 shadow-xl">
-      <h1 className="font-baloo text-3xl text-peach">Iniciar sesión</h1>
+      <h1 className="font-baloo text-3xl text-peach">Iniciar sesiÃ³n</h1>
       <p className="mt-2 text-sm text-charcoal/80">
         Ingresa con tus credenciales registradas para continuar con tus adopciones y compras.
       </p>
       <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          Correo electrónico
+          Correo electrÃ³nico
           <input
             required
             type="email"
@@ -54,7 +54,7 @@ const LoginPage = () => {
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          Contraseña
+          ContraseÃ±a
           <input
             required
             type="password"
@@ -73,13 +73,13 @@ const LoginPage = () => {
         {error && <p className="text-center text-sm text-red-500">{error}</p>}
       </form>
       <p className="mt-6 text-center text-xs text-charcoal/60">
-        ¿Aún no tienes cuenta? <button type="button" className="text-peach" onClick={() => navigate("/register")}>Regístrate</button>
+        Â¿AÃºn no tienes cuenta? <button type="button" className="text-peach" onClick={() => navigate("/register")}>RegÃ­strate</button>
       </p>
       <p className="mt-2 text-center text-xs text-charcoal/60">
-        Cuenta maestra para administradores: usa las credenciales provistas por el equipo líder para acceder al panel.
+        Cuenta maestra para administradores: usa las credenciales provistas por el equipo lÃ­der para acceder al panel.
       </p>
     </section>
   )
 }
 
-export default LoginPage
+export default LoginPage

@@ -58,4 +58,4 @@ const SupportSection = () => {
   )
 }
 
-export default SupportSection
+export default SupportSection

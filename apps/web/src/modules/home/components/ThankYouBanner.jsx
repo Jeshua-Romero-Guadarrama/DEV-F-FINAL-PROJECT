@@ -6,4 +6,4 @@ const ThankYouBanner = () => {
   )
 }
 
-export default ThankYouBanner
+export default ThankYouBanner

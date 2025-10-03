@@ -25,7 +25,7 @@ const ensureTransporter = () => {
 
 export const sendEmail = async ({ to, subject, text, html }) => {
   if (!config.smtp.user || !config.smtp.pass) {
-    console.warn("[email] SMTP no configurado. Omite envío a", to)
+    console.warn("[email] SMTP no configurado. Omite envÃ­o a", to)
     return null
   }
 
@@ -38,4 +38,4 @@ export const sendEmail = async ({ to, subject, text, html }) => {
     text,
     html,
   })
-}
+}

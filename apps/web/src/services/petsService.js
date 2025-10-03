@@ -10,4 +10,4 @@ export const petsService = {
   semillas() {
     return apiClient.get("/pets/seeds")
   },
-}
+}

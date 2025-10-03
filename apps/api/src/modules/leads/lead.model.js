@@ -65,4 +65,4 @@ const leadSchema = new Schema(
   },
 )
 
-export const Lead = model("Lead", leadSchema)
+export const Lead = model("Lead", leadSchema)

@@ -21,4 +21,4 @@ ordersRouter.patch(
   authorizeRoles("admin"),
   validateRequest(updateOrderStatusValidations),
   updateOrderStatus,
-)
+)

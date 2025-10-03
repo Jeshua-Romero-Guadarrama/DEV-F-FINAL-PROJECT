@@ -7,4 +7,4 @@ export class HttpError extends Error {
   }
 }
 
-export const createHttpError = (statusCode, message, details) => new HttpError(statusCode, message, details)
+export const createHttpError = (statusCode, message, details) => new HttpError(statusCode, message, details)

@@ -7,4 +7,4 @@ export const contactChannels = {
     { icon: "instagram", label: "Instagram" },
     { icon: "x", label: "X" },
   ],
-}
+}

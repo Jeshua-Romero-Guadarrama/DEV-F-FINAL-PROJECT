@@ -9,4 +9,4 @@ export const aboutHighlights = [
     description:
       "Los animales que llegan a la fundacion reciben atencion veterinaria completa hasta que logramos encontrarles un hogar que los cuide por vida.",
   },
-]
+]

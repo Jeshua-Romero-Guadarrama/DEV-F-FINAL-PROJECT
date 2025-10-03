@@ -66,4 +66,4 @@ userSchema.methods.comparePassword = function comparePassword(candidate) {
   return bcrypt.compare(candidate, this.password)
 }
 
-export const User = model("Usuario", userSchema)
+export const User = model("Usuario", userSchema)

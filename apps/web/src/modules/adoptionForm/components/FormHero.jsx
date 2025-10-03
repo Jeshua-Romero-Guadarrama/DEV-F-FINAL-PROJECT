@@ -3,12 +3,12 @@ const FormHero = () => {
     <section className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-peach to-cream p-10 text-charcoal shadow-xl">
       <div className="grid gap-6 md:grid-cols-[1.5fr,1fr] md:items-center">
         <div>
-          <p className="font-fredoka text-lg text-white/90">PawMatch • Adopta</p>
+          <p className="font-fredoka text-lg text-white/90">PawMatch Â• Adopta</p>
           <h1 className="mt-2 font-baloo text-4xl leading-tight text-white sm:text-5xl">
-            Su nueva vida contigo está a un formulario de distancia
+            Su nueva vida contigo estÃ¡ a un formulario de distancia
           </h1>
           <p className="mt-4 text-sm text-white/90">
-            Completa los datos, confirma que tu hogar es seguro y genera el contrato de adopción para formalizar el proceso.
+            Completa los datos, confirma que tu hogar es seguro y genera el contrato de adopciÃ³n para formalizar el proceso.
           </p>
         </div>
         <img
@@ -22,4 +22,4 @@ const FormHero = () => {
   )
 }
 
-export default FormHero
+export default FormHero

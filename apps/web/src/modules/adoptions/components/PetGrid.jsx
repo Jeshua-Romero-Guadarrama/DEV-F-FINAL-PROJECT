@@ -8,11 +8,11 @@ const PetGrid = ({ mascotas }) => {
       ))}
       {mascotas.length === 0 && (
         <p className="col-span-full text-center text-sm text-charcoal/60">
-          No encontramos peluditos con esos filtros. Prueba cambiar la búsqueda.
+          No encontramos peluditos con esos filtros. Prueba cambiar la bÃºsqueda.
         </p>
       )}
     </section>
   )
 }
 
-export default PetGrid
+export default PetGrid

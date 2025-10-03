@@ -30,4 +30,4 @@ export const addTimelineEntryValidations = [
   body("comentario")
     .notEmpty()
     .withMessage("Debe incluir un comentario para el seguimiento"),
-]
+]

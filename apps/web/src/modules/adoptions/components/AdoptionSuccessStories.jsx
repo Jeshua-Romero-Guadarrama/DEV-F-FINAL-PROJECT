@@ -1,16 +1,16 @@
 const historias = [
   {
     nombre: "Toby",
-    familia: "Familia Ramírez",
+    familia: "Familia RamÃ­rez",
     resumen:
-      "Llegó tímido pero en pocas semanas se volvió el compañero ideal de las caminatas matutinas. Ahora disfruta de una terraza llena de juguetes.",
+      "LlegÃ³ tÃ­mido pero en pocas semanas se volviÃ³ el compaÃ±ero ideal de las caminatas matutinas. Ahora disfruta de una terraza llena de juguetes.",
     foto: "https://images.unsplash.com/photo-1525253013412-55c1a69a5738?auto=format&fit=crop&w=320&q=80",
   },
   {
     nombre: "Luna",
     familia: "Laura y Nico",
     resumen:
-      "Fue rescatada con desnutrición, pero hoy es la reina del departamento. Su ronroneo es la alarma natural de la casa.",
+      "Fue rescatada con desnutriciÃ³n, pero hoy es la reina del departamento. Su ronroneo es la alarma natural de la casa.",
     foto: "https://images.unsplash.com/photo-1488036106564-87ecb155bb15?auto=format&fit=crop&w=320&q=80",
   },
 ]
@@ -42,4 +42,4 @@ const AdoptionSuccessStories = () => {
   )
 }
 
-export default AdoptionSuccessStories
+export default AdoptionSuccessStories

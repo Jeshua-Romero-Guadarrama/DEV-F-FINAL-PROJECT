@@ -87,4 +87,4 @@ const AdoptionsPage = () => {
   )
 }
 
-export default AdoptionsPage
+export default AdoptionsPage

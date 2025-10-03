@@ -19,4 +19,4 @@ export const createLeadValidations = [
 
 export const listLeadsValidations = [
   query("email").optional().isEmail().withMessage("Correo invalido"),
-]
+]

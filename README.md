@@ -1,142 +1,192 @@
 # PawMatch Platform
 
-La plataforma PawMatch impulsa la adopciÛn responsable y habilita una tienda solidaria para mascotas. El repositorio adopta un monorepo que coordina la API de servicios, la guÌa de cuidados y el frontend de experiencia interactiva, garantizando un flujo profesional listo para publicarse en GitHub.
+La plataforma PawMatch impulsa la adopci√≥n responsable y habilita una tienda solidaria para mascotas. El repositorio adopta un monorepo que coordina la API de servicios, la gu√≠a de cuidados y una experiencia web diferenciada entre usuarios adoptantes y administradores.
 
 ## Contenido
 - [Arquitectura general](#arquitectura-general)
-- [TecnologÌas clave](#tecnologias-clave)
-- [Inicio r·pido](#inicio-rapido)
+- [Perfil de usuarios](#perfil-de-usuarios)
+- [Credenciales de ejemplo](#credenciales-de-ejemplo)
+- [Tecnolog√≠as clave](#tecnolog√≠as-clave)
+- [Inicio r√°pido](#inicio-r√°pido)
 - [Variables de entorno](#variables-de-entorno)
 - [Scripts disponibles](#scripts-disponibles)
+- [Pruebas](#pruebas)
 - [API PawMatch](#api-pawmatch)
 - [Frontend web](#frontend-web)
 - [Arquitectura aplicada](#arquitectura-aplicada)
-- [Calidad y buenas pr·cticas](#calidad-y-buenas-practicas)
+- [Calidad y buenas pr√°cticas](#calidad-y-buenas-pr√°cticas)
 
 ## Arquitectura general
-El repositorio organiza sus aplicaciones bajo el directorio `apps/` siguiendo un monorepo modular.
+El repositorio organiza sus aplicaciones bajo el directorio pps/ siguiendo un monorepo modular.
 
-```text
+`	ext
 apps/
   api/
     src/
-      app/               # ConfiguraciÛn de Express y middlewares globales
-      config/            # Carga de variables y conexiÛn a MongoDB
-      middlewares/       # AutenticaciÛn, validaciÛn y manejo de errores
+      app/               # Configuraci√≥n de Express y middlewares globales
+      config/            # Carga de variables y conexi√≥n a MongoDB
+      middlewares/       # Autenticaci√≥n, validaci√≥n y manejo de errores
       modules/
         auth/            # Registro, login y perfil
-        pets/            # Cat·logo de mascotas en adopciÛn (incluye endpoint /seeds)
+        pets/            # Cat√°logo de mascotas en adopci√≥n (incluye endpoint /seeds)
         products/        # Tienda solidaria
-        requests/        # Solicitudes de adopciÛn y seguimiento
+        requests/        # Solicitudes de adopci√≥n y seguimiento
         orders/          # Pedidos de tienda administrables
-        leads/           # Registros de la guÌa de cuidados
+        leads/           # Registros de la gu√≠a de cuidados
         users/           # Modelo base de usuarios
       routes/            # Enrutador principal /api/v1
       shared/            # Utilitarios comunes (HttpError)
       utils/             # Servicios auxiliares (correo SMTP)
-    .env.example
+    tests/               # Pruebas Vitest + Supertest
+    vitest.config.js
     package.json
   web/
     src/
-      app/               # DefiniciÛn de rutas con React Router
+      app/               # Definici√≥n de rutas con React Router
       components/layout/ # Layout global, navbar y footer
-      modules/home/      # Componentes, datos y p·gina de inicio
-      modules/adoptions/ # Listado, detalle y contenidos educativos para adopciÛn
-      modules/adoptionForm/ # Flujo por pasos para el registro y contrato de adopciÛn
+      modules/home/      # Componentes, datos y p√°gina de inicio
+      modules/adoptions/ # Listado, detalle y contenidos educativos para adopci√≥n
+      modules/adoptionForm/ # Flujo por pasos para el registro y contrato de adopci√≥n
       modules/store/     # Hero, combos, beneficios, testimonios y carrito
       pages/
-        auth/            # Pantallas de registro e inicio de sesiÛn
-        care/            # P·gina guÌa de cuidados con formulario
+        auth/            # Pantallas de registro e inicio de sesi√≥n
+        care/            # P√°gina gu√≠a de cuidados con formulario
         admin/           # Panel administrativo con control de roles
       services/          # Clientes HTTP reutilizables (API, auth, pets, products, orders, leads)
-      context/           # Providers de autenticaciÛn y carrito compartido
-    public/
+      context/           # Providers de autenticaci√≥n y carrito compartido
+      tests/             # Pruebas de componentes con Testing Library + Vitest
+    vitest.config.js
     package.json
-```
+package.json            # Scripts orquestados para las aplicaciones
+`
 
-La raÌz incorpora `package.json` con scripts compuestos y `.gitignore` para excluir artefactos de build y secretos.
+## Perfil de usuarios
+- **Usuarios adoptantes (rol doptante o oluntario)**: acceden a la p√°gina p√∫blica (/), listado de adopciones, tienda y gu√≠a de cuidados. El enlace a ‚ÄúAdministraci√≥n‚Äù no aparece para cuentas sin permisos.
+- **Administradores (rol dmin)**: adem√°s de la experiencia p√∫blica, ven el enlace ‚ÄúAdministraci√≥n‚Äù en el men√∫ y acceden al panel /admin con m√©tricas de pedidos, leads y filtros por estado. Desde el inicio de sesi√≥n pueden usar credenciales maestras sin registrar una cuenta previa.
 
-## TecnologÌas clave
-- API: Node.js 20+, Express 5, Mongoose 8, JWT, Nodemailer, Helmet, CORS
-- Frontend: React 19, React Router 7, Vite 7, Tailwind CSS 3, React Icons
-- Calidad: ESLint (configuraciÛn dedicada por aplicaciÛn)
+## Credenciales de ejemplo
+Puedes definir las credenciales maestras en variables de entorno; si no se definen, se usan los siguientes valores por defecto para pruebas locales:
 
-## Inicio r·pido
+| Tipo de cuenta | Correo | Contrase√±a |
+| --- | --- | --- |
+| Administrador (maestro) | dmin@pawmatch.com | PawMatch#2025 |
+| Usuario general demo | demo@pawmatch.com | Demo123! |
+
+> El usuario general puede crearse desde /register o importarse manualmente en la base de datos. El administrador maestro no requiere registro previo: el backend valida la cuenta y tras iniciar sesi√≥n te redirige autom√°ticamente al panel.
+
+## Tecnolog√≠as clave
+- **API**: Node.js 20+, Express 5, Mongoose 8, JWT, Nodemailer, Helmet, CORS, Vitest + Supertest.
+- **Frontend**: React 19, React Router 7, Vite 7, Tailwind CSS 3, React Icons, Vitest + Testing Library.
+- **Calidad**: ESLint en cada app, configuraci√≥n Prettier friendly.
+
+## Inicio r√°pido
 1. **Requisitos**: Node.js 20 o superior y MongoDB accesible.
-2. **InstalaciÛn de dependencias** (desde la raÌz del repositorio):
-   ```bash
+2. **Instalaci√≥n de dependencias**:
+   `ash
    npm install --prefix apps/api
    npm install --prefix apps/web
-   ```
-3. **Variables de entorno**: duplicar `apps/api/.env.example` como `.env` y actualizar valores sensibles (`MONGO_URI`, `JWT_SECRET`, credenciales SMTP si se desea correo). Para acceso maestro opcional en frontend define `VITE_ADMIN_EMAIL` y `VITE_ADMIN_PASSWORD`.
-4. **EjecuciÛn local**:
-   - API: `npm run dev:api`
-   - Frontend: `npm run dev:web`
-5. **ProducciÛn mÌnima**:
-   - API: `npm run start:api`
-   - Frontend: `npm run build:web` seguido de `npm --prefix apps/web run preview` o despliegue est·tico.
+   `
+3. **Variables de entorno**: duplica pps/api/.env.example como .env y ajusta MONGO_URI, JWT_SECRET, SMTP_*. Para personalizar credenciales maestras del frontend define:
+   `ash
+   VITE_ADMIN_EMAIL=admin@pawmatch.com
+   VITE_ADMIN_PASSWORD=PawMatch#2025
+   `
+4. **Ejecuci√≥n local**:
+   `ash
+   npm run dev:api
+   npm run dev:web
+   `
+5. **Producci√≥n m√≠nima**:
+   `ash
+   npm run start:api
+   npm run build:web
+   npm --prefix apps/web run preview
+   `
 
 ## Variables de entorno
-La API consume los siguientes valores (ver `apps/api/.env.example`):
-
-| Variable             | DescripciÛn                                                         | Predeterminado                |
-| -------------------- | ------------------------------------------------------------------- | ----------------------------- |
-| `PORT`               | Puerto expuesto por Express                                          | `4000`                        |
-| `API_PREFIX`         | Prefijo com˙n para rutas REST                                        | `/api/v1`                     |
-| `MONGO_URI`          | Cadena de conexiÛn a MongoDB                                         | `mongodb://127.0.0.1:27017`   |
-| `MONGO_DB`           | Nombre de base de datos                                              | `pawmatch`                    |
-| `JWT_SECRET`         | Clave para firmar tokens JWT                                         | `supersecret`                 |
-| `JWT_EXPIRES_IN`     | Validez de token                                                     | `7d`                          |
-| `BCRYPT_SALT_ROUNDS` | Rondas de hash de contraseÒas                                        | `10`                          |
-| `CORS_ORIGINS`       | Lista separada por comas de orÌgenes permitidos                      | `http://localhost:5173`       |
-| `SMTP_*`             | Credenciales y configuraciÛn de correo transaccional (opcional)      | vacÌo                         |
+| Variable | Descripci√≥n | Predeterminado |
+| --- | --- | --- |
+| PORT | Puerto expuesto por Express | 4000 |
+| API_PREFIX | Prefijo com√∫n para rutas REST | /api/v1 |
+| MONGO_URI | Cadena de conexi√≥n a MongoDB | mongodb://127.0.0.1:27017 |
+| MONGO_DB | Nombre de base de datos | pawmatch |
+| JWT_SECRET | Clave para firmar tokens JWT | supersecret |
+| JWT_EXPIRES_IN | Validez del token | 7d |
+| BCRYPT_SALT_ROUNDS | Rondas de bcrypt | 10 |
+| CORS_ORIGINS | Comma list de or√≠genes permitidos | http://localhost:5173 |
+| SMTP_* | Configuraci√≥n de correo (opcional) | vac√≠o |
+| VITE_ADMIN_EMAIL | Correo maestro (frontend) | dmin@pawmatch.com |
+| VITE_ADMIN_PASSWORD | Contrase√±a maestra (frontend) | PawMatch#2025 |
 
 ## Scripts disponibles
-Scripts orquestados desde la raÌz (`package.json`):
+| Script | Prop√≥sito |
+| --- | --- |
+| 
+pm run dev:api | Inicia la API en modo desarrollo con Nodemon |
+| 
+pm run start:api | Inicia la API en modo producci√≥n |
+| 
+pm run lint:api | Ejecuta ESLint sobre pps/api |
+| 
+pm run dev:web | Levanta Vite con hot reload |
+| 
+pm run build:web | Construye el frontend para distribuci√≥n |
+| 
+pm run lint:web | Ejecuta ESLint sobre pps/web |
+| 
+pm run test:api | Ejecuta Vitest + Supertest en la API |
+| 
+pm run test:web | Ejecuta Vitest + Testing Library en el frontend |
+| 
+pm test | Corre pruebas de API y web en cadena |
 
-| Script              | PropÛsito                                     |
-| ------------------- | ---------------------------------------------- |
-| `npm run dev:api`   | Inicia la API en modo desarrollo con Nodemon   |
-| `npm run start:api` | Inicia la API en modo producciÛn               |
-| `npm run lint:api`  | Ejecuta ESLint sobre `apps/api`                |
-| `npm run dev:web`   | Levanta Vite con hot reload                    |
-| `npm run build:web` | Construye el frontend para distribuciÛn        |
-| `npm run lint:web`  | Valida est·ndares de cÛdigo en `apps/web`      |
+## Pruebas
+- **Backend** (pps/api/tests/pets.routes.test.js):
+  - Verifica el endpoint /health.
+  - Comprueba que /api/v1/pets/seeds devuelve al menos un ejemplo (Toby) con campos esenciales.
+  - Configuraci√≥n en pps/api/vitest.config.js.
+- **Frontend** (pps/web/src/tests/Navbar.test.jsx):
+  - Comprueba que el enlace ‚ÄúAdministraci√≥n‚Äù s√≥lo aparece para cuentas con rol dmin.
+  - Configuraci√≥n en pps/web/vitest.config.js y src/tests/setupTests.js.
+
+Ejecuta desde la ra√≠z:
+`ash
+npm run test:api
+npm run test:web
+`
 
 ## API PawMatch
-- **Salud**: `GET /health` devuelve estado del servicio.
-- **AutenticaciÛn** (`/api/v1/auth`): registro, login y perfil autenticado.
-- **Mascotas** (`/api/v1/pets` y `/api/v1/pets/seeds`): listado, detalle, creaciÛn, ediciÛn y semillas de ejemplo.
-- **Productos** (`/api/v1/products`): cat·logo solidario con filtros por categorÌa y estado.
-- **Solicitudes de adopciÛn** (`/api/v1/requests`): gestiÛn de solicitudes, timeline de seguimiento y notificaciones por correo.
-- **Pedidos de tienda** (`/api/v1/orders`): los usuarios autenticados crean pedidos y el rol `admin` consulta y actualiza su estatus.
-- **Leads de guÌa** (`/api/v1/leads`): formulario de la guÌa de cuidados abierto al p˙blico y consulta/gestiÛn para administradores.
+- **Salud**: GET /health devuelve estado del servicio.
+- **Autenticaci√≥n** (/api/v1/auth): registro, login y perfil autenticado. El frontend reconoce credenciales maestras definidas en las variables VITE_ADMIN_*.
+- **Mascotas** (/api/v1/pets y /api/v1/pets/seeds): listado/CRUD protegido para admins y semillas de ejemplo (Toby) cuando la colecci√≥n est√° vac√≠a.
+- **Productos** (/api/v1/products): cat√°logo solidario con filtros por categor√≠a y estado.
+- **Solicitudes de adopci√≥n** (/api/v1/requests): gesti√≥n de solicitudes, timeline y notificaciones.
+- **Pedidos** (/api/v1/orders): creaci√≥n por usuarios autenticados; consulta/actualizaci√≥n restringida a administradores.
+- **Leads de gu√≠a** (/api/v1/leads): formulario p√∫blico y consulta para admins.
 
 ## Frontend web
-La interfaz React organiza sus vistas principales mediante React Router:
-
-- `HomePage` mantiene el carrusel, secciones informativas y llamado a donativos.
-- `AdoptionsPage` ofrece filtros, tarjetas, paginaciÛn y contenidos de apoyo; si la API est· vacÌa usa semillas como Toby.
-- `PetDetailPage` muestra galerÌa, datos clave y narrativa de cada mascota con recursos de fallback.
-- `AdoptionFormPage` guÌa el registro y la generaciÛn de contrato mediante formularios por pasos (`/adoptions/form`).
-- `StorePage` replica el diseÒo de la tienda con combos destacados, beneficios, testimonios y carrito conectado a Ûrdenes.
-- `CareGuidePage` mantiene el formulario promocional y envÌa registros a la API de leads.
-- `LoginPage` detecta credenciales maestras (configurables con variables Vite) para redirigir directamente al panel.
-- `AdminDashboardPage` muestra estadÌsticas y tablas sÛlo si el usuario tiene rol `admin`; las cuentas est·ndar ven un mensaje informativo.
-
-`context/` aloja `AuthProvider` y `CartProvider`, reutilizados por toda la SPA. `services/` centraliza el acceso HTTP (`apiClient`, `authService`, `petsService`, `productsService`, `ordersService`, `leadsService`). Tailwind CSS define tipografÌas y colores corporativos.
+- HomePage: carrusel principal y landing corporativa.
+- AdoptionsPage: filtros, tarjeta de mascotas, historias, CTA a registro; usa semillas si la API a√∫n no tiene datos.
+- PetDetailPage: perfil con galer√≠a, detalles clave y CTA directa al formulario.
+- AdoptionFormPage: flujo en tres pasos para completar datos personales, vivienda y contrato.
+- StorePage: hero, combos, beneficios, testimonios y carrito conectado a √≥rdenes.
+- CareGuidePage: formulario para leads que alimenta /leads.
+- RegisterPage / LoginPage: autenticaci√≥n con persistencia en contexto; el login detecta credenciales maestras y redirige al panel administrativo.
+- AdminDashboardPage: m√©tricas de pedidos y leads, filtros por estado y mensajes diferenciados seg√∫n rol.
 
 ## Arquitectura aplicada
 PawMatch adopta una **arquitectura monorepo modular**:
+- **Backend**: monolito organizado por dominios (auth, pets, products, requests, orders, leads) con capas expl√≠citas de configuraci√≥n, middlewares, m√≥dulos y utilitarios.
+- **Frontend**: SPA con React Router, contextos globales (AuthProvider, CartProvider), servicios HTTP y m√≥dulos especializados (adopciones, tienda, formulario). Los componentes se dise√±aron con acentos correctos y layout responsivo siguiendo tu gu√≠a UI.
+- **Coordinaci√≥n**: el monorepo (npm workspaces) facilita scripts centralizados, pruebas y despliegue conjunto.
 
-- **Backend**: un monolito organizado por dominios (auth, pets, products, requests, orders, leads) siguiendo una separaciÛn por capas simples: configuraciÛn, middlewares, mÛdulos de dominio y utilitarios compartidos. Cada mÛdulo encapsula modelo Mongoose, validadores, controladores y rutas, favoreciendo cohesiÛn y mantenibilidad.
-- **Frontend**: una SPA construida con React y React Router, estructurada por layout, mÛdulos funcionales y p·ginas independientes. Los contextos de autenticaciÛn y carrito desacoplan el estado global, y los servicios HTTP abstraen la comunicaciÛn con la API.
-- **CoordinaciÛn**: el monorepo (workspace npm) permite compartir scripts y mantener versiones sincronizadas, reduciendo fricciÛn para despliegue y CI.
+## Calidad y buenas pr√°cticas
+- ESLint en ambas aplicaciones garantiza estilo consistente.
+- Se ignoran 
+ode_modules, archivos .env y compilados mediante .gitignore.
+- Ejecuta 
+pm run lint:web y 
+pm run lint:api antes de subir cambios.
+- Puedes a√±adir pruebas adicionales en pps/api/tests y pps/web/src/tests para nuevos m√≥dulos.
 
-## Calidad y buenas pr·cticas
-- La plataforma se beneficia de ESLint en cada aplicaciÛn para sostener un estilo consistente.
-- El repositorio ignora `node_modules`, archivos `.env` y compilados a travÈs de `.gitignore`.
-- Se recomienda ejecutar los scripts de linting antes de publicar un Pull Request.
-- Las pruebas unitarias pueden incorporarse en `apps/api/tests` o `apps/web/src/__tests__` seg˙n la necesidad del equipo.
-
-El repositorio queda listo para versionarse en GitHub, con estructura clara, comandos documentados y ejemplos de configuraciÛn reproducibles.
+Con esta estructura tienes la experiencia para adoptantes y el panel administrativo claramente separados, con pruebas b√°sicas listas para expandirse y documentaci√≥n alineada al nuevo flujo.

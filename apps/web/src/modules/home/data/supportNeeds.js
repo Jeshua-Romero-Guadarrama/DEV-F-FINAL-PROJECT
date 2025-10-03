@@ -19,4 +19,4 @@ export const supportNeeds = [
     title: "Accesorios",
     description: "Correas, collares, juguetes, trastes, cobijas y camitas.",
   },
-]
+]

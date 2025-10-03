@@ -69,4 +69,4 @@ const orderSchema = new Schema(
   },
 )
 
-export const Order = model("Pedido", orderSchema)
+export const Order = model("Pedido", orderSchema)

@@ -16,4 +16,4 @@ export const authService = {
   isMasterCredentials(email, password) {
     return email === ADMIN_EMAIL && password === ADMIN_PASSWORD
   },
-}
+}

@@ -20,4 +20,4 @@ export const createProductValidations = baseProductValidations
 
 export const updateProductValidations = [param("id").isMongoId().withMessage("Identificador invalido"), ...baseProductValidations]
 
-export const productIdValidation = [param("id").isMongoId().withMessage("Identificador invalido")]
+export const productIdValidation = [param("id").isMongoId().withMessage("Identificador invalido")]

@@ -36,7 +36,7 @@ const PetProfileHeader = ({ mascota }) => {
             to="/adoptions/form"
             className="mt-6 w-full rounded-full bg-peach px-6 py-3 text-center font-fredoka text-white transition hover:bg-peach/90"
           >
-            Me gustaría adoptarlo
+            Me gustarÃ­a adoptarlo
           </Link>
         </aside>
       </div>
@@ -44,4 +44,4 @@ const PetProfileHeader = ({ mascota }) => {
   )
 }
 
-export default PetProfileHeader
+export default PetProfileHeader

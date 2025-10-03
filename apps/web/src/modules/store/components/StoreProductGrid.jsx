@@ -50,4 +50,4 @@ const StoreProductGrid = ({ products, onRequireAuth }) => {
   )
 }
 
-export default StoreProductGrid
+export default StoreProductGrid

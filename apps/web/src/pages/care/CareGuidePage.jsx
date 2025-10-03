@@ -36,7 +36,7 @@ const CareGuidePage = () => {
         perros: Number(form.perros),
         gatos: Number(form.gatos),
       })
-      setMessage("Gracias por registrarte, pronto recibirás consejos personalizados.")
+      setMessage("Gracias por registrarte, pronto recibirÃ¡s consejos personalizados.")
       setForm(initialState)
     } catch (err) {
       setError(err.message)
@@ -48,9 +48,9 @@ const CareGuidePage = () => {
   return (
     <section className="mx-auto flex max-w-4xl flex-col gap-8 py-10">
       <div className="text-center">
-        <h1 className="font-baloo text-4xl text-peach">Hay orejitas, bigotes y miradas que derriten... ¡pase adelante!</h1>
+        <h1 className="font-baloo text-4xl text-peach">Hay orejitas, bigotes y miradas que derriten... Â¡pase adelante!</h1>
         <p className="mt-4 font-fredoka text-lg text-charcoal">Descubre como cuidar de tu mascota</p>
-        <p className="text-sm text-charcoal/70">Registrate y obtén informacion util para tus peluditos</p>
+        <p className="text-sm text-charcoal/70">Registrate y obtÃ©n informacion util para tus peluditos</p>
       </div>
 
       <form
@@ -127,7 +127,7 @@ const CareGuidePage = () => {
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           <label className="flex flex-col gap-2 text-sm">
-            ¿Cuantos perros tienes?
+            Â¿Cuantos perros tienes?
             <select
               value={form.perros}
               onChange={handleChange("perros")}
@@ -141,7 +141,7 @@ const CareGuidePage = () => {
             </select>
           </label>
           <label className="flex flex-col gap-2 text-sm">
-            ¿Cuantos gatos tienes?
+            Â¿Cuantos gatos tienes?
             <select
               value={form.gatos}
               onChange={handleChange("gatos")}
@@ -194,4 +194,4 @@ const CareGuidePage = () => {
   )
 }
 
-export default CareGuidePage
+export default CareGuidePage

@@ -7,9 +7,9 @@ export const validateRequest = (validations) => {
 
     const result = validationResult(req)
     if (!result.isEmpty()) {
-      return next(new HttpError(422, "Datos inv·lidos", result.array()))
+      return next(new HttpError(422, "Datos inv√°lidos", result.array()))
     }
 
     return next()
   }
-}
+}

@@ -20,4 +20,4 @@ export const heroSlides = [
     cta: "CONOCELOS",
     image: "https://images.unsplash.com/photo-1546421845-6471bdcf3edf?auto=format&fit=crop&w=1200&q=80",
   },
-]
+]

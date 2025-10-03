@@ -7,7 +7,7 @@ const StoreHero = () => {
           Encuentra alimento, juguetes y amor en un solo lugar
         </h1>
         <p className="mt-6 text-sm text-white/90">
-          El 20% de cada compra alimenta a mascotas sin hogar. Gracias por apoyar nuestra misión solidaria.
+          El 20% de cada compra alimenta a mascotas sin hogar. Gracias por apoyar nuestra misiÃ³n solidaria.
         </p>
       </div>
       <img
@@ -20,4 +20,4 @@ const StoreHero = () => {
   )
 }
 
-export default StoreHero
+export default StoreHero

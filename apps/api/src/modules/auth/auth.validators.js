@@ -3,21 +3,21 @@ import { USER_ROLES } from "../users/user.model.js"
 
 export const registerValidations = [
   body("nombre").trim().notEmpty().withMessage("El nombre es obligatorio"),
-  body("email").isEmail().withMessage("Correo inválido"),
+  body("email").isEmail().withMessage("Correo invÃ¡lido"),
   body("password")
     .isLength({ min: 6 })
-    .withMessage("La contraseña debe tener al menos 6 caracteres"),
+    .withMessage("La contraseÃ±a debe tener al menos 6 caracteres"),
   body("telefono")
     .optional()
     .isLength({ min: 7 })
-    .withMessage("El teléfono debe tener al menos 7 dígitos"),
+    .withMessage("El telÃ©fono debe tener al menos 7 dÃ­gitos"),
   body("rol")
     .optional()
     .isIn(USER_ROLES)
-    .withMessage(`Rol inválido. Valores permitidos: ${USER_ROLES.join(", ")}`),
+    .withMessage(`Rol invÃ¡lido. Valores permitidos: ${USER_ROLES.join(", ")}`),
 ]
 
 export const loginValidations = [
-  body("email").isEmail().withMessage("Correo inválido"),
-  body("password").notEmpty().withMessage("La contraseña es obligatoria"),
-]
+  body("email").isEmail().withMessage("Correo invÃ¡lido"),
+  body("password").notEmpty().withMessage("La contraseÃ±a es obligatoria"),
+]

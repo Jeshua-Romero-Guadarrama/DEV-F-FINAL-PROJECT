@@ -24,10 +24,10 @@ petsRouter.get("/seeds", (_req, res) => {
       nombre: "Toby",
       tipo: "perro",
       raza: "Border Collie",
-      edad: "2 aÒos",
+      edad: "2 a√±os",
       sexo: "male",
       descripcion:
-        "Con su mirada tierna y energÌa inagotable, Toby sueÒa con un hogar donde pueda correr libre, jugar y compartir cada dÌa con una familia que lo quiera tanto como Èl sabr· quererla.",
+        "Con su mirada tierna y energ√≠a inagotable, Toby sue√±a con un hogar donde pueda correr libre, jugar y compartir cada d√≠a con una familia que lo quiera tanto como √©l sabr√° quererla.",
       foto: "https://images.unsplash.com/photo-1525253013412-55c1a69a5738?auto=format&fit=crop&w=640&q=80",
       galeria: [
         "https://images.unsplash.com/photo-1437957146754-f6377debe171?auto=format&fit=crop&w=320&q=80",
@@ -63,4 +63,4 @@ petsRouter.delete(
   authorizeRoles("admin"),
   validateRequest(petIdValidation),
   deletePet,
-)
+)

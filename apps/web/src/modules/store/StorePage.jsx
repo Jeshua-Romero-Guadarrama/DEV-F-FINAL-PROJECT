@@ -44,7 +44,7 @@ const StorePage = () => {
 
       {authReminder && (
         <p className="rounded-2xl bg-peach/20 px-6 py-3 text-center text-sm text-peach">
-          Debes iniciar sesión o crear una cuenta para agregar productos al carrito.
+          Debes iniciar sesiÃ³n o crear una cuenta para agregar productos al carrito.
         </p>
       )}
 
@@ -64,4 +64,4 @@ const StorePage = () => {
   )
 }
 
-export default StorePage
+export default StorePage

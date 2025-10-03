@@ -7,11 +7,11 @@ import { petsService } from "../../services/petsService.js"
 const fallbackMascota = {
   id: "seed-toby",
   nombre: "Toby",
-  edad: "2 años",
+  edad: "2 aÃ±os",
   sexo: "macho",
   raza: "Border Collie",
   descripcion:
-    "Con su mirada tierna y energía inagotable, Toby sueña con un hogar donde pueda correr libre, jugar y compartir cada día con una familia que lo quiera tanto como él sabrá quererla.",
+    "Con su mirada tierna y energÃ­a inagotable, Toby sueÃ±a con un hogar donde pueda correr libre, jugar y compartir cada dÃ­a con una familia que lo quiera tanto como Ã©l sabrÃ¡ quererla.",
   foto: "https://images.unsplash.com/photo-1525253013412-55c1a69a5738?auto=format&fit=crop&w=640&q=80",
   galeria: [
     "https://images.unsplash.com/photo-1437957146754-f6377debe171?auto=format&fit=crop&w=320&q=80",
@@ -47,7 +47,7 @@ const PetDetailPage = () => {
           setMascota(mapMascota(response))
         }
       } catch (error) {
-        console.warn("No se encontró la mascota, usando fallback", error)
+        console.warn("No se encontrÃ³ la mascota, usando fallback", error)
         setMascota(fallbackMascota)
       } finally {
         setLoading(false)
@@ -62,7 +62,7 @@ const PetDetailPage = () => {
   }
 
   if (!mascota) {
-    return <p className="text-center text-sm text-red-500">No pudimos cargar la información de la mascota.</p>
+    return <p className="text-center text-sm text-red-500">No pudimos cargar la informaciÃ³n de la mascota.</p>
   }
 
   const vistaMascota = mapMascota(mascota)
@@ -75,4 +75,4 @@ const PetDetailPage = () => {
   )
 }
 
-export default PetDetailPage
+export default PetDetailPage

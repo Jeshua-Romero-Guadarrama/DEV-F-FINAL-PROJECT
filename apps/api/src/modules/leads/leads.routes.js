@@ -10,4 +10,4 @@ leadsRouter.post("/", validateRequest(createLeadValidations), createLead)
 
 leadsRouter.use(authenticate, authorizeRoles("admin"))
 leadsRouter.get("/", validateRequest(listLeadsValidations), listLeads)
-leadsRouter.delete("/:id", deleteLead)
+leadsRouter.delete("/:id", deleteLead)

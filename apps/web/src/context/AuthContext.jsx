@@ -44,4 +44,4 @@ export const useAuth = () => {
     throw new Error("useAuth debe usarse dentro de AuthProvider")
   }
   return ctx
-}
+}

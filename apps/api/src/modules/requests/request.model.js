@@ -60,4 +60,4 @@ const requestSchema = new Schema(
   },
 )
 
-export const Request = model("Solicitud", requestSchema)
+export const Request = model("Solicitud", requestSchema)

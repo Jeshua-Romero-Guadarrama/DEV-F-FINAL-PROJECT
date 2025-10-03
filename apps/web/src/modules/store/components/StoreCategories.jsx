@@ -9,7 +9,7 @@ const categories = [
 const StoreCategories = () => {
   return (
     <section className="mt-12 text-center">
-      <h2 className="font-baloo text-3xl text-peach">¿Qué vas a comprar el día de hoy?</h2>
+      <h2 className="font-baloo text-3xl text-peach">Â¿QuÃ© vas a comprar el dÃ­a de hoy?</h2>
       <div className="mt-6 grid gap-6 sm:grid-cols-5">
         {categories.map((category) => (
           <article key={category.label} className="flex flex-col items-center gap-3">
@@ -24,4 +24,4 @@ const StoreCategories = () => {
   )
 }
 
-export default StoreCategories
+export default StoreCategories

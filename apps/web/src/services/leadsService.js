@@ -7,4 +7,4 @@ export const leadsService = {
   listLeads(token, filters) {
     return apiClient.get("/leads", { token, params: filters })
   },
-}
+}

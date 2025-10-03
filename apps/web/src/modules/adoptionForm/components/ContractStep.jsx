@@ -14,7 +14,7 @@ const ContractStep = ({ data, onChange, onSaveSignature, onClearSignature }) => 
             value={data.tipoContrato}
             onChange={update("tipoContrato")}
           >
-            <option value="Adopci髇">Adopci髇</option>
+            <option value="Adopci贸n">Adopci贸n</option>
             <option value="Hogar temporal">Hogar temporal</option>
           </select>
         </label>
@@ -28,7 +28,7 @@ const ContractStep = ({ data, onChange, onSaveSignature, onClearSignature }) => 
           />
         </label>
         <label className="md:col-span-2 flex flex-col gap-2 text-sm text-charcoal">
-          N鷐ero de contrato
+          N煤mero de contrato
           <input
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             placeholder="Ej: 0001"
@@ -50,7 +50,7 @@ const ContractStep = ({ data, onChange, onSaveSignature, onClearSignature }) => 
             />
           </label>
           <label className="flex flex-col gap-2 text-sm text-charcoal">
-            Identificaci髇 (INE/ID)
+            Identificaci贸n (INE/ID)
             <input
               className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
               value={data.adoptanteId}
@@ -58,7 +58,7 @@ const ContractStep = ({ data, onChange, onSaveSignature, onClearSignature }) => 
             />
           </label>
           <label className="flex flex-col gap-2 text-sm text-charcoal">
-            Tel閒ono
+            Tel茅fono
             <input
               className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
               value={data.adoptanteTelefono}
@@ -66,7 +66,7 @@ const ContractStep = ({ data, onChange, onSaveSignature, onClearSignature }) => 
             />
           </label>
           <label className="flex flex-col gap-2 text-sm text-charcoal">
-            Direcci髇
+            Direcci贸n
             <input
               className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
               value={data.adoptanteDireccion}
@@ -131,7 +131,7 @@ const ContractStep = ({ data, onChange, onSaveSignature, onClearSignature }) => 
             </label>
           </div>
           <label className="flex flex-col gap-2 text-sm text-charcoal">
-            Tama駉 y peso
+            Tama帽o y peso
             <input
               className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
               value={data.mascotaTamano}
@@ -176,4 +176,4 @@ const ContractStep = ({ data, onChange, onSaveSignature, onClearSignature }) => 
   )
 }
 
-export default ContractStep
+export default ContractStep

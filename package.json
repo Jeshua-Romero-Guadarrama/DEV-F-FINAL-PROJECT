@@ -13,6 +13,9 @@
     "start:api": "npm --prefix apps/api run start",
     "build:web": "npm --prefix apps/web run build",
     "lint:api": "npm --prefix apps/api run lint",
-    "lint:web": "npm --prefix apps/web run lint"
+    "lint:web": "npm --prefix apps/web run lint",
+    "test:api": "npm --prefix apps/api run test",
+    "test:web": "npm --prefix apps/web run test",
+    "test": "npm run test:api && npm run test:web"
   }
 }

@@ -5,7 +5,7 @@ const HomeDataStep = ({ data, onChange }) => {
 
   const selectOptions = (options) => (
     <>
-      <option value="">Selecciona una opciÛn</option>
+      <option value="">Selecciona una opci√≥n</option>
       {options.map((option) => (
         <option key={option} value={option}>
           {option}
@@ -37,7 +37,7 @@ const HomeDataStep = ({ data, onChange }) => {
             onChange={update("espacios")}
             required
           >
-            {selectOptions(["Patio", "JardÌn", "¡rea exterior compartida", "Sin ·rea exterior"])}
+            {selectOptions(["Patio", "Jard√≠n", "√Årea exterior compartida", "Sin √°rea exterior"])}
           </select>
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
@@ -52,29 +52,29 @@ const HomeDataStep = ({ data, onChange }) => {
           </select>
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          N˙mero de personas en el hogar*
+          N√∫mero de personas en el hogar*
           <select
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             value={data.numeroPersonas}
             onChange={update("numeroPersonas")}
             required
           >
-            {selectOptions(["1", "2", "3", "4", "5 o m·s"])}
+            {selectOptions(["1", "2", "3", "4", "5 o m√°s"])}
           </select>
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          øHay niÒas o niÒos en casa?*
+          ¬øHay ni√±as o ni√±os en casa?*
           <select
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             value={data.ninos}
             onChange={update("ninos")}
             required
           >
-            {selectOptions(["SÌ", "No", "Ocasionalmente"])}
+            {selectOptions(["S√≠", "No", "Ocasionalmente"])}
           </select>
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          øHay otras mascotas?
+          ¬øHay otras mascotas?
           <input
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             placeholder="Especie, raza y edad"
@@ -83,7 +83,7 @@ const HomeDataStep = ({ data, onChange }) => {
           />
         </label>
         <label className="md:col-span-2 flex flex-col gap-2 text-sm text-charcoal">
-          øDÛnde permanecer· la mascota la mayor parte del tiempo?*
+          ¬øD√≥nde permanecer√° la mascota la mayor parte del tiempo?*
           <textarea
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             rows={3}
@@ -93,51 +93,51 @@ const HomeDataStep = ({ data, onChange }) => {
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          øCon quÈ frecuencia estar· sola al dÌa?*
+          ¬øCon qu√© frecuencia estar√° sola al d√≠a?*
           <select
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             value={data.frecuenciaSola}
             onChange={update("frecuenciaSola")}
             required
           >
-            {selectOptions(["Menos de 2 horas", "3-5 horas", "M·s de 6 horas"])}
+            {selectOptions(["Menos de 2 horas", "3-5 horas", "M√°s de 6 horas"])}
           </select>
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          øCuentas con transporte para emergencias?*
+          ¬øCuentas con transporte para emergencias?*
           <select
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             value={data.transporte}
             onChange={update("transporte")}
             required
           >
-            {selectOptions(["SÌ", "No", "Depende de un tercero"])}
+            {selectOptions(["S√≠", "No", "Depende de un tercero"])}
           </select>
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          øHarÌas adaptaciones si son necesarias?*
+          ¬øHar√≠as adaptaciones si son necesarias?*
           <select
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             value={data.adaptaciones}
             onChange={update("adaptaciones")}
             required
           >
-            {selectOptions(["SÌ", "No", "En evaluaciÛn"])}
+            {selectOptions(["S√≠", "No", "En evaluaci√≥n"])}
           </select>
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          øTendr· acceso a todos los espacios del hogar?*
+          ¬øTendr√° acceso a todos los espacios del hogar?*
           <select
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             value={data.accesos}
             onChange={update("accesos")}
             required
           >
-            {selectOptions(["SÌ", "No", "Solo ciertas ·reas"])}
+            {selectOptions(["S√≠", "No", "Solo ciertas √°reas"])}
           </select>
         </label>
         <label className="md:col-span-2 flex flex-col gap-2 text-sm text-charcoal">
-          Adjunta o describe el ·rea donde vivir· la mascota*
+          Adjunta o describe el √°rea donde vivir√° la mascota*
           <textarea
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             placeholder="Incluye enlace a foto o describe brevemente"
@@ -152,4 +152,4 @@ const HomeDataStep = ({ data, onChange }) => {
   )
 }
 
-export default HomeDataStep
+export default HomeDataStep

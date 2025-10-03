@@ -8,4 +8,4 @@ export const authRouter = Router()
 
 authRouter.post("/register", validateRequest(registerValidations), registerUser)
 authRouter.post("/login", validateRequest(loginValidations), loginUser)
-authRouter.get("/profile", authenticate, getProfile)
+authRouter.get("/profile", authenticate, getProfile)

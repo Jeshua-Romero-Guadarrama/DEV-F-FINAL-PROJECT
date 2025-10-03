@@ -53,4 +53,4 @@ const parseResponse = async (response) => {
     throw error
   }
   return data
-}
+}

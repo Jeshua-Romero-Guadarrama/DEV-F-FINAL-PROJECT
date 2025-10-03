@@ -31,7 +31,7 @@ export const registerUser = async (req, res, next) => {
 
     const existing = await User.findOne({ email })
     if (existing) {
-      throw new HttpError(409, "El correo ya está registrado")
+      throw new HttpError(409, "El correo ya estÃ¡ registrado")
     }
 
     const user = await User.create({ nombre, email, password, rol, telefono, direccion })
@@ -81,4 +81,4 @@ export const loginUser = async (req, res, next) => {
 
 export const getProfile = async (req, res) => {
   res.json({ user: sanitizeUser(req.user) })
-}
+}

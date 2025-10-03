@@ -51,4 +51,4 @@ export const config = {
   cors: {
     origins: corsOrigins,
   },
-}
+}

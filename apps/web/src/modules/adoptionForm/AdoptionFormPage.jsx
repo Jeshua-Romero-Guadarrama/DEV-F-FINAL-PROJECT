@@ -31,7 +31,7 @@ const defaultForm = {
     descripcionArea: "",
   },
   contrato: {
-    tipoContrato: "Adopción",
+    tipoContrato: "AdopciÃ³n",
     fecha: new Date().toISOString().split("T")[0],
     numero: "",
     adoptanteNombre: "",
@@ -82,7 +82,7 @@ const AdoptionFormPage = () => {
   }
 
   const handleGenerate = () => {
-    setFeedback("Contrato generado. Puedes descargarlo o imprimirlo desde aquí cuando la plataforma esté conectada al backend.")
+    setFeedback("Contrato generado. Puedes descargarlo o imprimirlo desde aquÃ­ cuando la plataforma estÃ© conectada al backend.")
   }
 
   const handleClear = () => {
@@ -169,4 +169,4 @@ const AdoptionFormPage = () => {
   )
 }
 
-export default AdoptionFormPage
+export default AdoptionFormPage

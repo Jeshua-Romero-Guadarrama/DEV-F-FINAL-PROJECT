@@ -12,7 +12,7 @@ const CartSummary = () => {
 
   const handleCheckout = async () => {
     if (!isAuthenticated || !token) {
-      setError("Debes iniciar sesiÛn para completar tu compra")
+      setError("Debes iniciar sesi√≥n para completar tu compra")
       return
     }
     if (items.length === 0) {
@@ -31,7 +31,7 @@ const CartSummary = () => {
         })),
         total: subtotal,
       })
-      setMessage("°Listo! Hemos registrado tu compra solidaria.")
+      setMessage("¬°Listo! Hemos registrado tu compra solidaria.")
       clearCart()
     } catch (err) {
       setError(err.message)
@@ -43,7 +43,7 @@ const CartSummary = () => {
   return (
     <aside className="flex flex-col gap-4 rounded-3xl bg-white p-6 shadow-xl">
       <h3 className="font-fredoka text-2xl text-peach">Tu carrito</h3>
-      <p className="text-sm text-charcoal/70">{itemCount} artÌculos seleccionados.</p>
+      <p className="text-sm text-charcoal/70">{itemCount} art√≠culos seleccionados.</p>
       <ul className="space-y-4 text-sm">
         {items.map((item) => (
           <li key={item.product.id} className="rounded-2xl border border-charcoal/10 p-4">
@@ -72,7 +72,7 @@ const CartSummary = () => {
             </div>
           </li>
         ))}
-        {items.length === 0 && <li className="text-center text-xs text-charcoal/60">Tu carrito est· vacÌo.</li>}
+        {items.length === 0 && <li className="text-center text-xs text-charcoal/60">Tu carrito est√° vac√≠o.</li>}
       </ul>
 
       <div className="mt-4 flex items-center justify-between text-lg font-semibold text-charcoal">
@@ -93,4 +93,4 @@ const CartSummary = () => {
   )
 }
 
-export default CartSummary
+export default CartSummary

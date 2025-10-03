@@ -10,14 +10,14 @@ const AdoptionHero = () => {
             Perros y gatos listos para llenar tu hogar de amor
           </h1>
           <p className="mt-6 text-sm text-white/90">
-            Explora nuestro refugio virtual. Cada perfil incluye historia, personalidad y cuidados para elegir la adopción ideal.
+            Explora nuestro refugio virtual. Cada perfil incluye historia, personalidad y cuidados para elegir la adopciÃ³n ideal.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               to="/adoptions/form"
               className="rounded-full bg-white px-6 py-3 font-fredoka text-peach shadow-md transition hover:bg-cream"
             >
-              Completar registro de adopción
+              Completar registro de adopciÃ³n
             </Link>
             <a
               href="#listado-adopciones"
@@ -38,4 +38,4 @@ const AdoptionHero = () => {
   )
 }
 
-export default AdoptionHero
+export default AdoptionHero

@@ -10,16 +10,16 @@ const benefits = [
       "Trabajamos con proveedores locales y responsables que garantizan insumos frescos y accesorios seguros.",
   },
   {
-    title: "Envíos solidarios",
+    title: "EnvÃ­os solidarios",
     description:
-      "Recibe tus pedidos en menos de 72 horas en la ciudad. Si apoyas con donación, el envío es gratuito.",
+      "Recibe tus pedidos en menos de 72 horas en la ciudad. Si apoyas con donaciÃ³n, el envÃ­o es gratuito.",
   },
 ]
 
 const StoreBenefits = () => {
   return (
     <section className="rounded-3xl bg-white p-10 shadow-xl">
-      <h3 className="font-baloo text-3xl text-peach">¿Por qué comprar en PawMatch?</h3>
+      <h3 className="font-baloo text-3xl text-peach">Â¿Por quÃ© comprar en PawMatch?</h3>
       <div className="mt-6 grid gap-6 md:grid-cols-3">
         {benefits.map((benefit) => (
           <article key={benefit.title} className="rounded-2xl border border-charcoal/5 bg-cream/50 p-6 text-charcoal">
@@ -32,4 +32,4 @@ const StoreBenefits = () => {
   )
 }
 
-export default StoreBenefits
+export default StoreBenefits

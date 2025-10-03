@@ -18,7 +18,7 @@ const PersonalDataStep = ({ data, onChange }) => {
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          Correo electrónico*
+          Correo electrÃ³nico*
           <input
             type="email"
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
@@ -29,7 +29,7 @@ const PersonalDataStep = ({ data, onChange }) => {
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          Número telefónico*
+          NÃºmero telefÃ³nico*
           <input
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             placeholder="000-000-0000"
@@ -59,7 +59,7 @@ const PersonalDataStep = ({ data, onChange }) => {
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          Código postal*
+          CÃ³digo postal*
           <input
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             placeholder="00000"
@@ -69,17 +69,17 @@ const PersonalDataStep = ({ data, onChange }) => {
           />
         </label>
         <label className="md:col-span-2 flex flex-col gap-2 text-sm text-charcoal">
-          Dirección*
+          DirecciÃ³n*
           <input
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
-            placeholder="Calle, número, colonia"
+            placeholder="Calle, nÃºmero, colonia"
             value={data.direccion}
             onChange={update("direccion")}
             required
           />
         </label>
         <label className="md:col-span-2 flex flex-col gap-2 text-sm text-charcoal">
-          Identificación oficial (INE/ID) – agrega enlace o nota*
+          IdentificaciÃ³n oficial (INE/ID) Â– agrega enlace o nota*
           <input
             className="rounded-2xl border border-charcoal/20 px-4 py-3 focus:border-peach focus:outline-none"
             placeholder="Enlace a PDF o escribe 'Entrego en persona'"
@@ -93,4 +93,4 @@ const PersonalDataStep = ({ data, onChange }) => {
   )
 }
 
-export default PersonalDataStep
+export default PersonalDataStep

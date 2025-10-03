@@ -1,14 +1,14 @@
 const pasos = [
   {
     title: "Solicita una visita",
-    description: "Completa el formulario y agenda un encuentro con el peludito que te enamoró.",
+    description: "Completa el formulario y agenda un encuentro con el peludito que te enamorÃ³.",
   },
   {
-    title: "Conócelo y convive",
-    description: "Nuestro equipo te acompañará para resolver dudas sobre temperamento y cuidados.",
+    title: "ConÃ³celo y convive",
+    description: "Nuestro equipo te acompaÃ±arÃ¡ para resolver dudas sobre temperamento y cuidados.",
   },
   {
-    title: "Adopción responsable",
+    title: "AdopciÃ³n responsable",
     description: "Firma el acuerdo, recibe kit de bienvenida y seguimiento durante las primeras semanas.",
   },
 ]
@@ -16,7 +16,7 @@ const pasos = [
 const AdoptionProcess = () => {
   return (
     <section className="rounded-3xl bg-white p-10 shadow-xl">
-      <h3 className="font-baloo text-3xl text-peach">Proceso de adopción en 3 pasos</h3>
+      <h3 className="font-baloo text-3xl text-peach">Proceso de adopciÃ³n en 3 pasos</h3>
       <div className="mt-6 grid gap-6 md:grid-cols-3">
         {pasos.map((paso, index) => (
           <article key={paso.title} className="rounded-2xl border border-charcoal/5 bg-cream/40 p-6">
@@ -32,4 +32,4 @@ const AdoptionProcess = () => {
   )
 }
 
-export default AdoptionProcess
+export default AdoptionProcess

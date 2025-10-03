@@ -11,10 +11,10 @@ const PetCard = ({ mascota }) => {
       </div>
       <h4 className="mt-4 font-fredoka text-xl text-charcoal">{mascota.nombre}</h4>
       <p className="text-sm text-charcoal/70">
-        {mascota.edad ?? "Sin edad"} · {mascota.sexo ?? "Sin sexo"}
+        {mascota.edad ?? "Sin edad"} Â· {mascota.sexo ?? "Sin sexo"}
       </p>
     </Link>
   )
 }
 
-export default PetCard
+export default PetCard

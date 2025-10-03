@@ -19,4 +19,4 @@ export const createPetValidations = basePetValidations
 
 export const updatePetValidations = [param("id").isMongoId().withMessage("Identificador invalido"), ...basePetValidations]
 
-export const petIdValidation = [param("id").isMongoId().withMessage("Identificador invalido")]
+export const petIdValidation = [param("id").isMongoId().withMessage("Identificador invalido")]

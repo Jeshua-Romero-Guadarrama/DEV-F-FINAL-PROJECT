@@ -42,4 +42,4 @@ productsRouter.delete(
   authorizeRoles("admin"),
   validateRequest(productIdValidation),
   deleteProduct,
-)
+)

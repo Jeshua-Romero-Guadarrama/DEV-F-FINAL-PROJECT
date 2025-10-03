@@ -68,4 +68,4 @@ const petSchema = new Schema(
   },
 )
 
-export const Pet = model("Mascota", petSchema)
+export const Pet = model("Mascota", petSchema)

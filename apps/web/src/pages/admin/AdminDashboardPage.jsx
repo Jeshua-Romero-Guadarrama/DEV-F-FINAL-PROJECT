@@ -46,7 +46,7 @@ const AdminDashboardPage = () => {
       <section className="mx-auto mt-10 max-w-2xl rounded-3xl bg-white p-10 text-center shadow-xl">
         <h1 className="font-baloo text-3xl text-peach">Acceso restringido</h1>
         <p className="mt-4 text-sm text-charcoal/70">
-          Inicia sesión con la cuenta maestra para visualizar el panel de administración. Contacta al equipo líder si necesitas
+          Inicia sesiÃ³n con la cuenta maestra para visualizar el panel de administraciÃ³n. Contacta al equipo lÃ­der si necesitas
           credenciales.
         </p>
       </section>
@@ -58,8 +58,8 @@ const AdminDashboardPage = () => {
       <section className="mx-auto mt-10 max-w-2xl rounded-3xl bg-white p-10 text-center shadow-xl">
         <h1 className="font-baloo text-3xl text-peach">Hola {user?.nombre}</h1>
         <p className="mt-4 text-sm text-charcoal/70">
-          Tu cuenta no tiene permisos administrativos. Puedes consultar tus solicitudes de adopción y compras desde el
-          menú principal.
+          Tu cuenta no tiene permisos administrativos. Puedes consultar tus solicitudes de adopciÃ³n y compras desde el
+          menÃº principal.
         </p>
       </section>
     )
@@ -72,7 +72,7 @@ const AdminDashboardPage = () => {
       <header className="rounded-3xl bg-peach p-8 text-white shadow-xl">
         <h1 className="font-baloo text-3xl">Panel administrativo PawMatch</h1>
         <p className="mt-2 text-sm">
-          Gestiona pedidos, registros de guía de cuidados y revisa la recaudación solidaria.
+          Gestiona pedidos, registros de guÃ­a de cuidados y revisa la recaudaciÃ³n solidaria.
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           <article className="rounded-2xl bg-white/20 p-4 text-sm">
@@ -80,7 +80,7 @@ const AdminDashboardPage = () => {
             <p className="mt-2 text-2xl font-bold">{orders.length}</p>
           </article>
           <article className="rounded-2xl bg-white/20 p-4 text-sm">
-            <h2 className="font-fredoka text-lg">Leads de la guía</h2>
+            <h2 className="font-fredoka text-lg">Leads de la guÃ­a</h2>
             <p className="mt-2 text-2xl font-bold">{leads.length}</p>
           </article>
           <article className="rounded-2xl bg-white/20 p-4 text-sm">
@@ -125,7 +125,7 @@ const AdminDashboardPage = () => {
                   <span className="font-semibold">#{order.id?.slice(-6) ?? "---"}</span>
                   <span className="rounded-full bg-mint/30 px-3 py-1 text-xs uppercase text-peach">{order.estado}</span>
                 </div>
-                <p className="mt-2 text-xs text-charcoal/70">Cliente: {order.usuario?.nombre ?? "Anónimo"}</p>
+                <p className="mt-2 text-xs text-charcoal/70">Cliente: {order.usuario?.nombre ?? "AnÃ³nimo"}</p>
                 <p className="mt-2 text-sm">Total: ${order.total?.toFixed(2) ?? "0.00"}</p>
                 <ul className="mt-2 space-y-1 text-xs">
                   {order.items?.map((item, index) => (
@@ -141,7 +141,7 @@ const AdminDashboardPage = () => {
         </article>
 
         <article className="rounded-3xl bg-white p-6 shadow-xl">
-          <h2 className="font-fredoka text-2xl text-peach">Registros de la guía</h2>
+          <h2 className="font-fredoka text-2xl text-peach">Registros de la guÃ­a</h2>
           <ul className="mt-4 space-y-4 text-sm text-charcoal/90">
             {leads.map((lead) => (
               <li key={lead.id} className="rounded-2xl border border-charcoal/10 p-4">
@@ -162,4 +162,4 @@ const AdminDashboardPage = () => {
   )
 }
 
-export default AdminDashboardPage
+export default AdminDashboardPage

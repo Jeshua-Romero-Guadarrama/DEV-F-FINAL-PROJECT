@@ -4,4 +4,4 @@ export const productsService = {
   list(params) {
     return apiClient.get("/products", { params })
   },
-}
+}
