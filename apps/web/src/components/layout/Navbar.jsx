@@ -36,6 +36,9 @@ const Navbar = () => {
           <Link className="transition hover:text-cream" to="/store">
             Tienda
           </Link>
+          <Link className="transition hover:text-cream" to="/donate">
+            Dona
+          </Link>
           <Link className="transition hover:text-cream" to="/care-guide">
             Guía de cuidados
           </Link>
@@ -103,3 +106,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+

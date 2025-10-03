@@ -13,6 +13,7 @@ import AdminDashboardPage from "../pages/admin/AdminDashboardPage.jsx"
 import AdminLoginPage from "../pages/admin/AdminLoginPage.jsx"
 import CareGuidePage from "../pages/care/CareGuidePage.jsx"
 import ContactPage from "../pages/info/ContactPage.jsx"
+import DonatePage from "../pages/info/DonatePage.jsx"
 import LoginPage from "../pages/auth/LoginPage.jsx"
 import RegisterPage from "../pages/auth/RegisterPage.jsx"
 
@@ -35,12 +36,15 @@ const App = () => {
         <Route path="/admin" element={<AdminDashboardPage />} />
         <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/donate" element={<DonatePage />} />
       </Routes>
     </MainLayout>
   )
 }
 
 export default App
+
+
 
 
 

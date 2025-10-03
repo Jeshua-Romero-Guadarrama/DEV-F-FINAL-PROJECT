@@ -1,5 +1,6 @@
-import { FaBone, FaNewspaper, FaPaw } from "react-icons/fa"
+﻿import { FaBone, FaNewspaper, FaPaw } from "react-icons/fa"
 import { FaPumpSoap } from "react-icons/fa6"
+import { Link } from "react-router-dom"
 import { supportNeeds } from "../data/supportNeeds.js"
 
 const iconMap = {
@@ -19,12 +20,15 @@ const SupportSection = () => {
           </span>
           <h3 className="mt-4 font-baloo text-3xl leading-snug">Cada donativo mantiene a nuestros peluditos sanos y felices</h3>
           <p className="mt-4 text-sm leading-relaxed text-white/90">
-            Puedes ayudar con donativos en especie o suma economica; con ellos nos permites seguir apoyando a los perros y gatos rescatados
-            en su manutencion, salud, rehabilitacion fisica, emocional y conductual.
+            Puedes ayudar con donativos en especie o suma económica; con ellos nos permites seguir apoyando a los perros y gatos rescatados
+            en su manutención, salud, rehabilitación física, emocional y conductual.
           </p>
-          <button className="mt-6 w-fit rounded-full bg-white px-6 py-2 font-fredoka text-peach shadow-md transition hover:bg-cream">
-            DONA
-          </button>
+          <Link
+            to="/donate"
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-2 font-fredoka text-sm text-peach shadow-md transition hover:bg-cream"
+          >
+            <FaPaw className="text-base" aria-hidden /> Dona
+          </Link>
           <img
             src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=700&q=80"
             alt="Perro rescatado"
@@ -36,7 +40,7 @@ const SupportSection = () => {
         <article className="flex flex-col gap-6 rounded-3xl bg-white p-10 shadow-xl">
           <h3 className="font-baloo text-3xl text-peach">Tu apoyo hace la diferencia</h3>
           <p className="text-sm text-charcoal/80">
-            Cada donativo cubre necesidades basicas de nuestros peluditos rescatados. Estos son algunos articulos que siempre recibimos con
+            Cada donativo cubre necesidades básicas de nuestros peluditos rescatados. Estos son algunos artículos que siempre recibimos con
             gusto:
           </p>
           <dl className="grid gap-6">
@@ -58,4 +62,4 @@ const SupportSection = () => {
   )
 }
 
-export default SupportSection
+export default SupportSection

@@ -1,9 +1,9 @@
-import { aboutHighlights } from "../data/aboutHighlights.js"
+﻿import { aboutHighlights } from "../data/aboutHighlights.js"
 
 const AboutSection = () => {
   return (
-    <section id="adoptions" className="relative mx-auto mt-16 w-full bg-mint/90 px-6 py-16">
-      <div className="mx-auto flex max-w-6xl flex-col items-center text-center text-white">
+    <section id="adoptions" className="relative mx-auto mt-16 w-full overflow-hidden bg-mint/90 px-6 py-16">
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center text-center text-white">
         <h2 className="font-baloo text-3xl leading-snug sm:text-4xl">Trabajando a favor de los animales</h2>
         <div className="mt-10 grid w-full gap-8 md:grid-cols-2">
           {aboutHighlights.map((card) => (
@@ -17,13 +17,13 @@ const AboutSection = () => {
       <img
         src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?auto=format&fit=crop&w=480&q=80"
         alt="Gato curioso"
-        className="pointer-events-none absolute -left-6 -bottom-4 hidden h-56 object-contain md:block"
+        className="pointer-events-none absolute bottom-6 left-4 hidden h-56 w-56 object-contain opacity-80 md:block"
         loading="lazy"
       />
       <img
         src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=480&q=80"
         alt="Perro feliz"
-        className="pointer-events-none absolute -right-8 -top-8 hidden h-56 object-contain md:block"
+        className="pointer-events-none absolute -top-6 right-6 hidden h-56 w-56 object-contain opacity-80 md:block"
         loading="lazy"
       />
     </section>
@@ -31,3 +31,4 @@ const AboutSection = () => {
 }
 
 export default AboutSection
+
