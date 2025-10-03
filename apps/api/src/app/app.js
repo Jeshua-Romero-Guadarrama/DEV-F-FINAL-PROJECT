@@ -5,6 +5,7 @@ import morgan from "morgan"
 import { config } from "../config/env.js"
 import { apiRouter } from "../routes/index.js"
 import { notFoundHandler, errorHandler } from "../middlewares/error.middleware.js"
+import { swaggerServe, swaggerSetup } from "../docs/swagger.js"
 
 export const createApp = () => {
   const app = express()
@@ -20,6 +21,8 @@ export const createApp = () => {
   app.use(express.urlencoded({ extended: true }))
   app.use(morgan(config.isProduction ? "combined" : "dev"))
 
+
+  app.use('/docs', swaggerServe, swaggerSetup)
   app.get("/health", (req, res) => {
     res.json({ status: "ok", timestamp: new Date().toISOString() })
   })
@@ -30,4 +33,5 @@ export const createApp = () => {
   app.use(errorHandler)
 
   return app
-}
+}
+
