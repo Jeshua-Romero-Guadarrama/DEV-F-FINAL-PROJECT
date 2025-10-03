@@ -7,4 +7,7 @@ export const petsService = {
   detalleMascota(id) {
     return apiClient.get(`/pets/${id}`)
   },
+  semillas() {
+    return apiClient.get("/pets/seeds")
+  },
 }

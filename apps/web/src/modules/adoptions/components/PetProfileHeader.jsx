@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const PetProfileHeader = ({ mascota }) => {
   const galeria = mascota.galeria?.length ? mascota.galeria : [mascota.foto]
   return (
@@ -30,9 +32,12 @@ const PetProfileHeader = ({ mascota }) => {
               </li>
             </ul>
           </div>
-          <button className="mt-6 w-full rounded-full bg-peach px-6 py-3 font-fredoka text-white transition hover:bg-peach/90">
+          <Link
+            to="/adoptions/form"
+            className="mt-6 w-full rounded-full bg-peach px-6 py-3 text-center font-fredoka text-white transition hover:bg-peach/90"
+          >
             Me gustaría adoptarlo
-          </button>
+          </Link>
         </aside>
       </div>
     </header>

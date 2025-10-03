@@ -19,6 +19,13 @@ const LoginPage = () => {
     setLoading(true)
     setError(null)
     try {
+      if (authService.isMasterCredentials(form.email.trim(), form.password)) {
+        const response = await authService.login(form)
+        login(response)
+        navigate("/admin")
+        return
+      }
+
       const response = await authService.login(form)
       login(response)
       navigate("/store")
@@ -31,13 +38,13 @@ const LoginPage = () => {
 
   return (
     <section className="mx-auto mt-10 max-w-md rounded-3xl bg-white p-10 shadow-xl">
-      <h1 className="font-baloo text-3xl text-peach">Iniciar sesion</h1>
+      <h1 className="font-baloo text-3xl text-peach">Iniciar sesión</h1>
       <p className="mt-2 text-sm text-charcoal/80">
         Ingresa con tus credenciales registradas para continuar con tus adopciones y compras.
       </p>
       <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          Correo electronico
+          Correo electrónico
           <input
             required
             type="email"
@@ -47,7 +54,7 @@ const LoginPage = () => {
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          Password
+          Contraseña
           <input
             required
             type="password"
@@ -66,7 +73,10 @@ const LoginPage = () => {
         {error && <p className="text-center text-sm text-red-500">{error}</p>}
       </form>
       <p className="mt-6 text-center text-xs text-charcoal/60">
-        ¿Aun no tienes cuenta? <button type="button" className="text-peach" onClick={() => navigate("/register")}>Registrate</button>
+        ¿Aún no tienes cuenta? <button type="button" className="text-peach" onClick={() => navigate("/register")}>Regístrate</button>
+      </p>
+      <p className="mt-2 text-center text-xs text-charcoal/60">
+        Cuenta maestra para administradores: usa las credenciales provistas por el equipo líder para acceder al panel.
       </p>
     </section>
   )

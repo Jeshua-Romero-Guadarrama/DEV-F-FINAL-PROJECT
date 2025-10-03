@@ -11,16 +11,17 @@ import { petsService } from "../../services/petsService.js"
 const mapMascota = (mascota) => ({
   id: mascota.id,
   nombre: mascota.nombre,
-  edad: mascota.edad ? `${mascota.edad} años` : "Edad no disponible",
+  edad: mascota.edad ? `${mascota.edad}` : "Edad no disponible",
   sexo: mascota.sexo ?? "Sin dato",
   raza: mascota.raza ?? "Sin raza",
   descripcion: mascota.descripcion ?? "",
   foto: mascota.foto,
-  galeria: [mascota.foto, ...(mascota.salud?.galeria ?? [])].filter(Boolean),
+  galeria: mascota.galeria ?? [mascota.foto].filter(Boolean),
 })
 
 const AdoptionsPage = () => {
   const [mascotas, setMascotas] = useState([])
+  const [semillas, setSemillas] = useState([])
   const [filtros, setFiltros] = useState({ tipo: "todos", sexo: "todos" })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -45,12 +46,27 @@ const AdoptionsPage = () => {
     fetchMascotas()
   }, [filtros.tipo])
 
+  useEffect(() => {
+    const cargarSemillas = async () => {
+      try {
+        const base = await petsService.semillas()
+        setSemillas(base.map(mapMascota))
+      } catch (err) {
+        console.warn("No se pudieron cargar semillas", err)
+      }
+    }
+
+    cargarSemillas()
+  }, [])
+
+  const listaActiva = mascotas.length > 0 ? mascotas : semillas
+
   const filtradas = useMemo(() => {
     if (filtros.sexo === "todos") {
-      return mascotas
+      return listaActiva
     }
-    return mascotas.filter((mascota) => (mascota.sexo ?? "").toLowerCase() === filtros.sexo)
-  }, [mascotas, filtros.sexo])
+    return listaActiva.filter((mascota) => (mascota.sexo ?? "").toLowerCase() === filtros.sexo)
+  }, [listaActiva, filtros.sexo])
 
   return (
     <section className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-10">

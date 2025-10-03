@@ -9,13 +9,15 @@ const Navbar = () => {
   const { itemCount } = useCart()
   const navigate = useNavigate()
 
+  const isAdmin = user?.rol === "admin"
+
   const handleLogout = () => {
     logout()
     navigate("/")
   }
 
   return (
-    <header className="bg-peach text-white">
+    <header className="bg-peach text-white" lang="es">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
         <Link to="/" className="flex items-center gap-3">
           <div className="rounded-full bg-white p-2 text-peach shadow-md">
@@ -28,15 +30,20 @@ const Navbar = () => {
           <Link className="transition hover:text-cream" to="/adoptions">
             Adopciones
           </Link>
+          <Link className="transition hover:text-cream" to="/adoptions/form">
+            Registro de adopción
+          </Link>
           <Link className="transition hover:text-cream" to="/store">
             Tienda
           </Link>
           <Link className="transition hover:text-cream" to="/care-guide">
-            Guia de cuidados
+            Guía de cuidados
           </Link>
-          <Link className="transition hover:text-cream" to="/admin">
-            Administracion
-          </Link>
+          {isAdmin && (
+            <Link className="transition hover:text-cream" to="/admin">
+              Administración
+            </Link>
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -74,7 +81,7 @@ const Navbar = () => {
           ) : (
             <div className="flex items-center gap-2 text-sm">
               <Link to="/login" className="rounded-full bg-white/30 px-3 py-2 text-white transition hover:bg-white/40">
-                Iniciar sesion
+                Iniciar sesión
               </Link>
               <Link to="/register" className="rounded-full bg-sunny px-3 py-2 text-charcoal transition hover:bg-sunny/90">
                 Registrarme
