@@ -1,4 +1,4 @@
-export const fallbackProducts = [
+﻿export const fallbackProducts = [
   {
     id: 'seed-food-1',
     nombre: 'Croquetas Premium',
@@ -52,5 +52,41 @@ export const fallbackProducts = [
     precio: 680,
     activo: true,
     imagen: 'https://images.unsplash.com/photo-1601758124027-27f25b911aa5?auto=format&fit=crop&w=400&q=80',
+  },
+  {
+    id: 'seed-snack-2',
+    nombre: 'Galletas de Camote',
+    descripcion: 'Horneadas con camote y avena, perfectas para estómagos sensibles.',
+    categoria: 'premios',
+    precio: 95,
+    activo: true,
+    imagen: 'https://images.unsplash.com/photo-1525253013412-55c1a69a5738?auto=format&fit=crop&w=400&q=80',
+  },
+  {
+    id: 'seed-bed-1',
+    nombre: 'Cama Antiestrés',
+    descripcion: 'Bordes elevados y relleno viscoelástico para reducir la ansiedad.',
+    categoria: 'accesorios',
+    precio: 780,
+    activo: true,
+    imagen: 'https://images.unsplash.com/photo-1601758125946-6ec2e0f642d1?auto=format&fit=crop&w=400&q=80',
+  },
+  {
+    id: 'seed-hygiene-1',
+    nombre: 'Shampoo Calmante',
+    descripcion: 'Fórmula hipoalergénica con avena y sábila para pieles delicadas.',
+    categoria: 'accesorios',
+    precio: 210,
+    activo: true,
+    imagen: 'https://images.unsplash.com/photo-1525253086316-d0c936c814f8?auto=format&fit=crop&w=400&q=80',
+  },
+  {
+    id: 'seed-toy-2',
+    nombre: 'Set Mordederas Enriquecidas',
+    descripcion: 'Tres piezas de caucho natural para reforzar mandíbula y aliviar ansiedad.',
+    categoria: 'juguetes',
+    precio: 320,
+    activo: true,
+    imagen: 'https://images.unsplash.com/photo-1619983080975-9623c6f5c6b3?auto=format&fit=crop&w=400&q=80',
   },
 ]

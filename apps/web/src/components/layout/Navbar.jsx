@@ -1,5 +1,5 @@
 ﻿import { FaPaw } from "react-icons/fa"
-import { FiSearch, FiShoppingCart } from "react-icons/fi"
+import { FiLogIn, FiSearch, FiShoppingCart, FiUserPlus } from "react-icons/fi"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../../context/AuthContext.jsx"
 import { useCart } from "../../context/CartContext.jsx"
@@ -47,11 +47,11 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <label className="hidden items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-sm text-charcoal shadow-sm sm:flex">
+          <label className="hidden items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-xs text-charcoal shadow-sm sm:flex">
             <FiSearch className="text-peach" aria-hidden />
             <span className="sr-only">Buscar</span>
             <input
-              className="w-32 bg-transparent font-poppins text-sm text-charcoal placeholder:text-charcoal/50 focus:outline-none"
+              className="w-32 bg-transparent font-poppins text-xs text-charcoal placeholder:text-charcoal/50 focus:outline-none sm:text-sm"
               placeholder="Buscar"
               type="search"
               aria-label="Buscar"
@@ -63,28 +63,36 @@ const Navbar = () => {
             className="relative flex items-center gap-2 rounded-full bg-white/30 px-3 py-2 text-white transition hover:bg-white/40"
             aria-label="Ir al carrito"
           >
-            <FiShoppingCart className="text-xl" aria-hidden />
+            <FiShoppingCart className="text-lg sm:text-xl" aria-hidden />
             {itemCount > 0 && (
-              <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-sunny text-xs font-semibold text-charcoal">
+              <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-sunny text-[10px] font-semibold text-charcoal">
                 {itemCount}
               </span>
             )}
           </Link>
 
           {isAuthenticated ? (
-            <div className="flex items-center gap-2 rounded-full bg-white/30 px-3 py-2 text-sm">
+            <div className="flex items-center gap-2 rounded-full bg-white/30 px-3 py-2 text-xs sm:text-sm">
               <span className="hidden text-white sm:inline">Hola, {user?.nombre ?? "usuario"}</span>
               <button type="button" onClick={handleLogout} className="text-white/90 hover:text-white">
                 Salir
               </button>
             </div>
           ) : (
-            <div className="flex items-center gap-2 text-sm">
-              <Link to="/login" className="rounded-full bg-white/30 px-3 py-2 text-white transition hover:bg-white/40">
-                Iniciar sesión
+            <div className="flex items-center gap-2 text-xs sm:text-sm">
+              <Link
+                to="/login"
+                className="flex items-center gap-1 rounded-full bg-white/30 px-3 py-2 text-white transition hover:bg-white/40"
+              >
+                <FiLogIn aria-hidden />
+                <span>Ingresar</span>
               </Link>
-              <Link to="/register" className="rounded-full bg-sunny px-3 py-2 text-charcoal transition hover:bg-sunny/90">
-                Registrarme
+              <Link
+                to="/register"
+                className="flex items-center gap-1 rounded-full bg-sunny px-3 py-2 text-charcoal transition hover:bg-sunny/90"
+              >
+                <FiUserPlus aria-hidden />
+                <span>Registro</span>
               </Link>
             </div>
           )}
@@ -95,4 +103,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-

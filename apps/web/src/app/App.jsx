@@ -10,6 +10,7 @@ import PrivacyPage from "../pages/info/PrivacyPage.jsx"
 import TermsPage from "../pages/info/TermsPage.jsx"
 import AdoptionPolicyPage from "../pages/info/AdoptionPolicyPage.jsx"
 import AdminDashboardPage from "../pages/admin/AdminDashboardPage.jsx"
+import AdminLoginPage from "../pages/admin/AdminLoginPage.jsx"
 import CareGuidePage from "../pages/care/CareGuidePage.jsx"
 import ContactPage from "../pages/info/ContactPage.jsx"
 import LoginPage from "../pages/auth/LoginPage.jsx"
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/admin" element={<AdminDashboardPage />} />
+        <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </MainLayout>
@@ -39,5 +41,7 @@ const App = () => {
 }
 
 export default App
+
+
 
 

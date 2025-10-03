@@ -1,4 +1,5 @@
-import { useState } from "react"
+﻿import { useState } from "react"
+import { FiUserPlus } from "react-icons/fi"
 import { useNavigate } from "react-router-dom"
 import { authService } from "../../services/authService.js"
 
@@ -28,7 +29,7 @@ const RegisterPage = () => {
     setError(null)
     try {
       await authService.register({ ...form, rol })
-      setMessage("Registro exitoso. Ahora puedes iniciar sesion.")
+      setMessage("Registro exitoso. Ahora puedes iniciar sesión.")
       setForm(initialForm)
       setRol("adoptante")
       setTimeout(() => navigate("/login"), 800)
@@ -40,7 +41,7 @@ const RegisterPage = () => {
   }
 
   return (
-    <section className="mx-auto mt-10 max-w-2xl rounded-3xl bg-cream p-10 shadow-xl">
+    <section className="mx-auto mt-10 max-w-2xl rounded-3xl bg-cream p-10 shadow-xl" lang="es">
       <h1 className="font-baloo text-3xl text-peach">Crear cuenta PawMatch</h1>
       <p className="mt-2 text-sm text-charcoal/80">
         Registra tu cuenta para gestionar solicitudes, compras y seguir el bienestar de tus peluditos.
@@ -53,38 +54,38 @@ const RegisterPage = () => {
             type="text"
             value={form.nombre}
             onChange={updateField("nombre")}
-            className="rounded-xl border border-charcoal/10 px-4 py-3 focus:border-peach focus:outline-none"
+            className="rounded-xl border border-charcoal/10 px-4 py-3 text-sm focus:border-peach focus:outline-none"
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          Correo electronico
+          Correo electrónico
           <input
             required
             type="email"
             value={form.email}
             onChange={updateField("email")}
-            className="rounded-xl border border-charcoal/10 px-4 py-3 focus:border-peach focus:outline-none"
+            className="rounded-xl border border-charcoal/10 px-4 py-3 text-sm focus:border-peach focus:outline-none"
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          Telefono
+          Teléfono
           <input
             required
             type="tel"
             value={form.telefono}
             onChange={updateField("telefono")}
-            className="rounded-xl border border-charcoal/10 px-4 py-3 focus:border-peach focus:outline-none"
+            className="rounded-xl border border-charcoal/10 px-4 py-3 text-sm focus:border-peach focus:outline-none"
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
-          Password
+          Contraseña
           <input
             required
             minLength={6}
             type="password"
             value={form.password}
             onChange={updateField("password")}
-            className="rounded-xl border border-charcoal/10 px-4 py-3 focus:border-peach focus:outline-none"
+            className="rounded-xl border border-charcoal/10 px-4 py-3 text-sm focus:border-peach focus:outline-none"
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-charcoal">
@@ -92,7 +93,7 @@ const RegisterPage = () => {
           <select
             value={rol}
             onChange={(event) => setRol(event.target.value)}
-            className="rounded-xl border border-charcoal/10 px-4 py-3 focus:border-peach focus:outline-none"
+            className="rounded-xl border border-charcoal/10 px-4 py-3 text-sm focus:border-peach focus:outline-none"
           >
             <option value="adoptante">Adoptante</option>
             <option value="voluntario">Voluntario</option>
@@ -101,8 +102,9 @@ const RegisterPage = () => {
         <button
           type="submit"
           disabled={loading}
-          className="mt-4 w-full rounded-full bg-peach px-6 py-3 font-fredoka text-white transition hover:bg-peach/90 disabled:opacity-60"
+          className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-peach px-6 py-3 font-fredoka text-sm text-white transition hover:bg-peach/90 disabled:opacity-60"
         >
+          <FiUserPlus aria-hidden />
           {loading ? "Registrando..." : "Registrarme"}
         </button>
         {message && <p className="text-center text-sm text-mint">{message}</p>}
@@ -112,4 +114,4 @@ const RegisterPage = () => {
   )
 }
 
-export default RegisterPage
+export default RegisterPage
