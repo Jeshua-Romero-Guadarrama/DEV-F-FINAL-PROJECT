@@ -19,7 +19,7 @@ La plataforma PawMatch impulsa la adopción responsable y habilita una tienda so
 ## Arquitectura general
 El repositorio organiza sus aplicaciones bajo el directorio apps/ siguiendo un monorepo modular.
 
-`	markdown
+```
 apps/
   api/
     src/
@@ -58,7 +58,7 @@ apps/
     vitest.config.js
     package.json
 package.json            # Scripts orquestados para las aplicaciones
-`
+```
 
 ## Perfil de usuarios
 - **Usuarios adoptantes (rol adoptante o voluntario)**: acceden a la página pública (/), listado de adopciones, tienda y guía de cuidados. El enlace a “Administración” no aparece para cuentas sin permisos.
