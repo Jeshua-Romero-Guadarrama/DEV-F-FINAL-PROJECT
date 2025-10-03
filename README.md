@@ -17,7 +17,7 @@ La plataforma PawMatch impulsa la adopción responsable y habilita una tienda so
 - [Calidad y buenas prácticas](#calidad-y-buenas-prácticas)
 
 ## Arquitectura general
-El repositorio organiza sus aplicaciones bajo el directorio pps/ siguiendo un monorepo modular.
+El repositorio organiza sus aplicaciones bajo el directorio apps/ siguiendo un monorepo modular.
 
 `	ext
 apps/
@@ -61,15 +61,15 @@ package.json            # Scripts orquestados para las aplicaciones
 `
 
 ## Perfil de usuarios
-- **Usuarios adoptantes (rol doptante o oluntario)**: acceden a la página pública (/), listado de adopciones, tienda y guía de cuidados. El enlace a “Administración” no aparece para cuentas sin permisos.
-- **Administradores (rol dmin)**: además de la experiencia pública, ven el enlace “Administración” en el menú y acceden al panel /admin con métricas de pedidos, leads y filtros por estado. Desde el inicio de sesión pueden usar credenciales maestras sin registrar una cuenta previa.
+- **Usuarios adoptantes (rol adoptante o voluntario)**: acceden a la página pública (/), listado de adopciones, tienda y guía de cuidados. El enlace a “Administración” no aparece para cuentas sin permisos.
+- **Administradores (rol admin)**: además de la experiencia pública, ven el enlace “Administración” en el menú y acceden al panel /admin con métricas de pedidos, leads y filtros por estado. Desde el inicio de sesión pueden usar credenciales maestras sin registrar una cuenta previa.
 
 ## Credenciales de ejemplo
 Puedes definir las credenciales maestras en variables de entorno; si no se definen, se usan los siguientes valores por defecto para pruebas locales:
 
 | Tipo de cuenta | Correo | Contraseña |
 | --- | --- | --- |
-| Administrador (maestro) | dmin@pawmatch.com | PawMatch#2025 |
+| Administrador (maestro) | admin@pawmatch.com | PawMatch#2025 |
 | Usuario general demo | demo@pawmatch.com | Demo123! |
 
 > El usuario general puede crearse desde /register o importarse manualmente en la base de datos. El administrador maestro no requiere registro previo: el backend valida la cuenta y tras iniciar sesión te redirige automáticamente al panel.
@@ -82,22 +82,22 @@ Puedes definir las credenciales maestras en variables de entorno; si no se defin
 ## Inicio rápido
 1. **Requisitos**: Node.js 20 o superior y MongoDB accesible.
 2. **Instalación de dependencias**:
-   `ash
+   `bash
    npm install --prefix apps/api
    npm install --prefix apps/web
    `
-3. **Variables de entorno**: duplica pps/api/.env.example como .env y ajusta MONGO_URI, JWT_SECRET, SMTP_*. Para personalizar credenciales maestras del frontend define:
-   `ash
+3. **Variables de entorno**: duplica apps/api/.env.example como .env y ajusta MONGO_URI, JWT_SECRET, SMTP_*. Para personalizar credenciales maestras del frontend define:
+   `bash
    VITE_ADMIN_EMAIL=admin@pawmatch.com
    VITE_ADMIN_PASSWORD=PawMatch#2025
    `
 4. **Ejecución local**:
-   `ash
+   `bash
    npm run dev:api
    npm run dev:web
    `
 5. **Producción mínima**:
-   `ash
+   `bash
    npm run start:api
    npm run build:web
    npm --prefix apps/web run preview
@@ -115,7 +115,7 @@ Puedes definir las credenciales maestras en variables de entorno; si no se defin
 | BCRYPT_SALT_ROUNDS | Rondas de bcrypt | 10 |
 | CORS_ORIGINS | Comma list de orígenes permitidos | http://localhost:5173 |
 | SMTP_* | Configuración de correo (opcional) | vacío |
-| VITE_ADMIN_EMAIL | Correo maestro (frontend) | dmin@pawmatch.com |
+| VITE_ADMIN_EMAIL | Correo maestro (frontend) | admin@pawmatch.com |
 | VITE_ADMIN_PASSWORD | Contraseña maestra (frontend) | PawMatch#2025 |
 
 ## Scripts disponibles
@@ -126,13 +126,13 @@ pm run dev:api | Inicia la API en modo desarrollo con Nodemon |
 | 
 pm run start:api | Inicia la API en modo producción |
 | 
-pm run lint:api | Ejecuta ESLint sobre pps/api |
+pm run lint:api | Ejecuta ESLint sobre apps/api |
 | 
 pm run dev:web | Levanta Vite con hot reload |
 | 
 pm run build:web | Construye el frontend para distribución |
 | 
-pm run lint:web | Ejecuta ESLint sobre pps/web |
+pm run lint:web | Ejecuta ESLint sobre apps/web |
 | 
 pm run test:api | Ejecuta Vitest + Supertest en la API |
 | 
@@ -141,16 +141,16 @@ pm run test:web | Ejecuta Vitest + Testing Library en el frontend |
 pm test | Corre pruebas de API y web en cadena |
 
 ## Pruebas
-- **Backend** (pps/api/tests/pets.routes.test.js):
+- **Backend** (apps/api/tests/pets.routes.test.js):
   - Verifica el endpoint /health.
   - Comprueba que /api/v1/pets/seeds devuelve al menos un ejemplo (Toby) con campos esenciales.
-  - Configuración en pps/api/vitest.config.js.
-- **Frontend** (pps/web/src/tests/Navbar.test.jsx):
-  - Comprueba que el enlace “Administración” sólo aparece para cuentas con rol dmin.
-  - Configuración en pps/web/vitest.config.js y src/tests/setupTests.js.
+  - Configuración en apps/api/vitest.config.js.
+- **Frontend** (apps/web/src/tests/Navbar.test.jsx):
+  - Comprueba que el enlace “Administración” sólo aparece para cuentas con rol admin.
+  - Configuración en apps/web/vitest.config.js y src/tests/setupTests.js.
 
 Ejecuta desde la raíz:
-`ash
+`bash
 npm run test:api
 npm run test:web
 `
@@ -187,6 +187,6 @@ ode_modules, archivos .env y compilados mediante .gitignore.
 - Ejecuta 
 pm run lint:web y 
 pm run lint:api antes de subir cambios.
-- Puedes añadir pruebas adicionales en pps/api/tests y pps/web/src/tests para nuevos módulos.
+- Puedes añadir pruebas adicionales en apps/api/tests y apps/web/src/tests para nuevos módulos.
 
 Con esta estructura tienes la experiencia para adoptantes y el panel administrativo claramente separados, con pruebas básicas listas para expandirse y documentación alineada al nuevo flujo.
