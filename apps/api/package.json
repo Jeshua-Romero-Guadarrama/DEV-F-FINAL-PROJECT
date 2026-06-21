@@ -27,9 +27,9 @@
     "express-validator": "^7.3.0",
     "helmet": "^7.2.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.19.0",
+    "mongoose": "^9.7.1",
     "morgan": "^1.10.1",
-    "nodemailer": "^8.0.4",
+    "nodemailer": "^9.0.1",
     "pawmatch-platform": "file:../..",
     "swagger-ui-express": "^5.0.0",
     "yamljs": "^0.3.0"
