@@ -17,5 +17,8 @@
     "test:api": "npm --prefix apps/api run test",
     "test:web": "npm --prefix apps/web run test",
     "test": "npm run test:api && npm run test:web"
+  },
+  "overrides": {
+    "postcss-selector-parser": "^7.1.6"
   }
 }
